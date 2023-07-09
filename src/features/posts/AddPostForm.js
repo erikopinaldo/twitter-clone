@@ -10,9 +10,8 @@ export const AddPostForm = () => {
 
     const dispatch = useDispatch()
 
-
-    const onTitleChanged = e => setTitle(e.target.value)
-    const onContentChanged = e => setContent(e.target.value)
+    const onTitleChanged = (e) => setTitle(e.target.value)
+    const onContentChanged = (e) => setContent(e.target.value)
 
     const onSavePostClicked = () => {
         if (title && content) {
@@ -20,7 +19,7 @@ export const AddPostForm = () => {
                 postAdded({
                     id: nanoid(),
                     title,
-                    content
+                    content,
                 })
             )
 
@@ -48,7 +47,9 @@ export const AddPostForm = () => {
                     value={content}
                     onChange={onContentChanged}
                 />
-                <button type="button">Save Post</button>
+                <button type="button" onClick={onSavePostClicked}>
+                    Save Post
+                </button>
             </form>
         </section>
     )
