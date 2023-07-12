@@ -135,6 +135,12 @@ p.post-content {
   margin-top: 10px;
 }
 
+.reaction-button-list {
+  display: flex;
+  justify-content: space-between;
+  max-width: 425px;
+}
+
 .button {
   display: inline-block;
   background: #1976d2;
