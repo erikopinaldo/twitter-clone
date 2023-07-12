@@ -17,7 +17,6 @@ export const PostsList = () => {
     const renderedPosts = orderedPosts.map((post) => {
         return (
             <article className="post-excerpt" key={post.id}>
-                <h3>{post.title}</h3>
                 <div>
                     <PostAuthor userId={post.user} />
                     <TimeAgo timestamp={post.date} />
