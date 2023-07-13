@@ -30,7 +30,7 @@ export const AddPostForm = () => {
     ))
 
     return (
-        <section>
+        <section className='add-post-form'>
             <h2>Add a New Post</h2>
             <form>
                 <label htmlFor="postAuthor">Author:</label>
