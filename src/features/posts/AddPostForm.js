@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { postAdded } from './postsSlice'
 
 export const AddPostForm = () => {
-    const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const [userId, setUserId] = useState('')
 
@@ -12,19 +11,17 @@ export const AddPostForm = () => {
 
     const users = useSelector(state => state.users)
 
-    const onTitleChanged = e => setTitle(e.target.value)
     const onContentChanged = e => setContent(e.target.value)
     const onAuthorChanged = e => setUserId(e.target.value)
 
     const onSavePostClicked = () => {
-        if (title && content) {
-            dispatch(postAdded(title, content, userId))
-            setTitle('')
+        if (content) {
+            dispatch(postAdded(content, userId))
             setContent('')
         }
     }
 
-    const canSave = Boolean(title) && Boolean(content) && Boolean(userId)
+    const canSave = Boolean(content) && Boolean(userId)
 
     const usersOptions = users.map(user => (
         <option key={user.id} value={user.id}>
