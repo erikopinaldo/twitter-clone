@@ -34,7 +34,6 @@ export const PostsList = () => {
 
     return (
         <section className="posts-list">
-            <h2>Posts</h2>
             {renderedPosts}
         </section>
     )
