@@ -36,15 +36,6 @@ export const AddPostForm = () => {
         <section>
             <h2>Add a New Post</h2>
             <form>
-                <label htmlFor="postTitle">Post Title:</label>
-                <input
-                    type="text"
-                    id="postTitle"
-                    name="postTitle"
-                    placeholder="What's on your mind?"
-                    value={title}
-                    onChange={onTitleChanged}
-                />
                 <label htmlFor="postAuthor">Author:</label>
                 <select id="postAuthor" value={userId} onChange={onAuthorChanged}>
                     <option value=""></option>
