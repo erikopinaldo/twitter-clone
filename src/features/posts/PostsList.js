@@ -17,16 +17,18 @@ export const PostsList = () => {
 
     const renderedPosts = orderedPosts.map((post) => {
         return (
-            <article className="post-excerpt" key={post.id}>
-                <div>
-                    <PostAuthor userId={post.user} />
-                    <PostAuthorUsername userId={post.user} />
-                    <TweetDate timestamp={post.date} />
-                </div>
-                <p className="post-content">{post.content.substring(0, 100)}</p>
+            <div className='post-excerpt-container'>
+                <article className="post-excerpt" key={post.id}>
+                    <div>
+                        <PostAuthor userId={post.user} />
+                        <PostAuthorUsername userId={post.user} />
+                        <TweetDate timestamp={post.date} />
+                    </div>
+                    <p className="post-content">{post.content.substring(0, 100)}</p>
 
-                <ReactionButtons post={post} />
-            </article>
+                    <ReactionButtons post={post} />
+                </article>
+            </div>          
         )
     })
 
