@@ -5,7 +5,6 @@ import { sub } from 'date-fns'
 const initialState = [
     {
         id: '1',
-        title: 'First Post!',
         content: 'Hello!',
         user: '0',
         date: sub(new Date(), { minutes: 10 }).toISOString(),
@@ -15,7 +14,6 @@ const initialState = [
     },
     {
         id: '2',
-        title: 'Second Post',
         content: 'More text',
         user: '2',
         date: sub(new Date(), { minutes: 5 }).toISOString(),
