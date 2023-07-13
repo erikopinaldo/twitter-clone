@@ -1,7 +1,7 @@
 import React from 'react'
 import { format } from 'date-fns'
 
-export const TimeAgo = ({ timestamp }) => {
+export const TweetDate = ({ timestamp }) => {
     let date = ''
     if (timestamp) {
         date = format(new Date(timestamp), 'MMMM dd')
