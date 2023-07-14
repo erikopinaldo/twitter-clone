@@ -4,6 +4,8 @@
 
 body {
   margin: 0;
+  /* Padding is to compensate for mobile bottom nav */
+  padding-bottom: 55.2px; 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -22,14 +24,28 @@ p {
 
 /* Navbar */
 
-nav {
-  display: flex;
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* display: flex; */
   padding: 0;
-  background: var(--redux-color);
+  background-color: white;
+  border-top: 1px solid rgb(177, 174, 174);
+}
+
+.navbar a {
+  color: #f2f2f2;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
 nav section {
   width: 100%;
+  padding: 0px 40px 0px 40px;
 }
 
 nav section h1,
@@ -37,14 +53,14 @@ nav section {
   color: white;
 }
 
-nav a,
+/* nav a,
 nav a:active {
   font-weight: 700;
   padding: 0.25rem 1.5rem;
   border-radius: 4px;
   color: white !important;
   background: #481499;
-}
+} */
 
 nav a:first-of-type {
   margin-left: -1.5rem;
@@ -52,20 +68,45 @@ nav a:first-of-type {
 
 nav a:hover {
   color: white;
-  background: #926bcf;
+  /* background: #926bcf; */
 }
 
-.navContent {
+/* .navContent {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .navLinks {
   display: flex;
+  justify-content: space-around;
 }
 
 .navLinks a {
   margin-left: 5px;
+}
+
+.navLink-text {
+  display: none;
+  color: black;
+}
+
+@media (min-width: 800px) {
+  .App {
+    margin-left: 20%;
+  }
+
+  .navbar {
+    width: 20%;
+    height: 100%;
+  }
+
+  .navLinks, .navLinks a {
+    display: block;
+  }
+
+  .navLink-text {
+    display: inline-block;
+  }
 }
 
 .navLinks a .badge {
