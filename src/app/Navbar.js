@@ -2,12 +2,15 @@ import React from 'react'
 
 export const Navbar = () => {
   return (
-    <nav>
+    <nav className='navbar'>
       <section>
-        <h1>Home</h1>
-
         <div className="navContent">
-          <div className="navLinks"></div>
+          <div className="navLinks">
+            <a href='#'>🏠</a>
+            <a href='#'>🔎</a>
+            <a href='#'>🔔</a>
+            <a href='#'>✉️</a>
+          </div>
         </div>
       </section>
     </nav>
