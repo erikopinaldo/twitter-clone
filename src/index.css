@@ -25,14 +25,14 @@ p {
 /* Navbar */
 
 .navbar {
-  background-color: #333;
   overflow: hidden;
   position: fixed;
   bottom: 0;
   width: 100%;
   /* display: flex; */
   padding: 0;
-  background: var(--redux-color);
+  background-color: white;
+  border-top: 1px solid rgb(177, 174, 174);
 }
 
 .navbar a {
@@ -67,7 +67,7 @@ nav a:first-of-type {
 
 nav a:hover {
   color: white;
-  background: #926bcf;
+  /* background: #926bcf; */
 }
 
 /* .navContent {
