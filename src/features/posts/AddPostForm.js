@@ -31,23 +31,24 @@ export const AddPostForm = () => {
 
     return (
         <section className='add-post-form'>
-            <h2>Add a New Post</h2>
             <form>
-                <label htmlFor="postAuthor">Author:</label>
+                {/* <label htmlFor="postAuthor">Author:</label> */}
                 <select id="postAuthor" value={userId} onChange={onAuthorChanged}>
                     <option value=""></option>
                     {usersOptions}
                 </select>
-                <label htmlFor="postContent">Content:</label>
+                {/* <label htmlFor="postContent">Content:</label> */}
                 <textarea
                     id="postContent"
                     name="postContent"
                     value={content}
                     onChange={onContentChanged}
                 />
-                <button type="button" onClick={onSavePostClicked} disabled={!canSave}>
-                    Save Post
-                </button>
+                <div className='tweet-button-container'>
+                    <button type="button" onClick={onSavePostClicked} disabled={!canSave}>
+                        Tweet
+                    </button>
+                </div> 
             </form>
         </section>
     )
