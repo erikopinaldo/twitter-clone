@@ -17,8 +17,8 @@ export const PostsList = () => {
 
     const renderedPosts = orderedPosts.map((post) => {
         return (
-            <div className='post-excerpt-container'>
-                <article className="post-excerpt" key={post.id}>
+            <div className='post-excerpt-container' key={post.id}>
+                <article className="post-excerpt">
                     <div>
                         <PostAuthor userId={post.user} />
                         <PostAuthorUsername userId={post.user} />
