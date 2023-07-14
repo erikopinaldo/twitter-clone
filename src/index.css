@@ -84,6 +84,21 @@ nav a:hover {
   margin-left: 5px;
 }
 
+@media (min-width: 800px) {
+  .App {
+    margin-left: 20%;
+  }
+
+  .navbar {
+    width: 20%;
+    height: 100%;
+  }
+
+  .navLinks, .navLinks a {
+    display: block;
+  }
+}
+
 .navLinks a .badge {
   margin-left: 5px;
   position: relative;
