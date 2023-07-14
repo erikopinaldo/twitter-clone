@@ -4,30 +4,48 @@ import { useDispatch } from 'react-redux'
 import { reactionAdded } from './postsSlice'
 
 const reactionEmoji = {
-    thumbsUp: '👍',
-    hooray: '🎉',
+    reply: '↩️',
+    retweet: '🔁',
     heart: '❤️',
-    rocket: '🚀',
-    eyes: '👀'
 }
 
 export const ReactionButtons = ({ post }) => {
     const dispatch = useDispatch()
 
     const reactionButtons = Object.entries(reactionEmoji).map(([name, emoji]) => {
-        return (
-            <button
-                key={name}
-                type="button"
-                className="muted-button reaction-button"
-                onClick={() =>
-                    dispatch(reactionAdded({ postId: post.id, reaction: name }))
-                }
-            >
-                {emoji} {post.reactions[name]}
-            </button>
-        )
+        let reaction
+
+        if (name === 'heart') {
+            reaction = (
+                <button
+                    key={name}
+                    type="button"
+                    className="muted-button reaction-button"
+                    onClick={() =>
+                        dispatch(reactionAdded({ postId: post.id, reaction: name }))
+                    }
+                >
+                    {emoji} {post.reactions[name]}
+                </button>
+            )
+        }
+        else {
+            reaction = (
+                <button
+                    key={name}
+                    type="button"
+                    className="muted-button reaction-button"
+                    onClick={() =>
+                        console.log(name)
+                    }
+                >
+                    {emoji} {post.reactions[name]}
+                </button>
+            )
+        }
+
+        return reaction
     })
 
-    return <div>{reactionButtons}</div>
+    return <div className='reaction-button-list'>{reactionButtons}</div>
 }

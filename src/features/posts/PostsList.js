@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import { PostAuthor } from './PostAuthor'
-import { TimeAgo } from './TimeAgo'
+import { PostAuthorUsername } from './PostAuthorUsername'
+import { TweetDate } from './TweetDate'
 import { ReactionButtons } from './ReactionButtons'
 
 export const PostsList = () => {
@@ -16,22 +17,23 @@ export const PostsList = () => {
 
     const renderedPosts = orderedPosts.map((post) => {
         return (
-            <article className="post-excerpt" key={post.id}>
-                <h3>{post.title}</h3>
-                <div>
-                    <PostAuthor userId={post.user} />
-                    <TimeAgo timestamp={post.date} />
-                </div>
-                <p className="post-content">{post.content.substring(0, 100)}</p>
+            <div className='post-excerpt-container' key={post.id}>
+                <article className="post-excerpt">
+                    <div>
+                        <PostAuthor userId={post.user} />
+                        <PostAuthorUsername userId={post.user} />
+                        <TweetDate timestamp={post.date} />
+                    </div>
+                    <p className="post-content">{post.content.substring(0, 100)}</p>
 
-                <ReactionButtons post={post} />
-            </article>
+                    <ReactionButtons post={post} />
+                </article>
+            </div>          
         )
     })
 
     return (
         <section className="posts-list">
-            <h2>Posts</h2>
             {renderedPosts}
         </section>
     )

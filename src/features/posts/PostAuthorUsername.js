@@ -1,10 +1,10 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-export const PostAuthor = ({ userId }) => {
+export const PostAuthorUsername = ({ userId }) => {
     const author = useSelector(state =>
         state.users.find(user => user.id === userId)
     )
 
-    return <span><strong>{author ? author.name : 'Unknown author'}</strong></span>
+    return <span>&nbsp; {author ? author.username : 'Unknown author'}</span>
 }
