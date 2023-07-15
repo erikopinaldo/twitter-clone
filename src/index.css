@@ -75,11 +75,11 @@ nav section {
 
 @media (min-width: 800px) {
   .App {
-    margin-left: 300px;
+    margin-left: 250px;
   }
 
   .navbar {
-    width: 300px;
+    width: 250px;
     height: 100%;
   }
 
