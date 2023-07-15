@@ -93,6 +93,7 @@ nav section {
 
   .navLink-text {
     display: inline-block;
+    font-size: 20px;
   }
 }
 
