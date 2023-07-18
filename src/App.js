@@ -10,25 +10,29 @@ import { Navbar } from './app/Navbar'
 
 import { PostsList } from './features/posts/PostsList'
 import { AddPostForm } from './features/posts/AddPostForm'
+import { MobileAddPostForm } from './features/posts/MobileAddPostForm'
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <div className="App">
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => (
-              <React.Fragment>
-                <AddPostForm />
-                <PostsList />
-              </React.Fragment>
-            )}
-          />
-          <Redirect to="/" />
-        </Switch>
+      <div className='wrapper'>
+        <Navbar />
+        <div className="App">
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <React.Fragment>
+                  <AddPostForm />
+                  <PostsList />
+                </React.Fragment>
+              )}
+            />
+            <Route exact path="/compose/tweet" component={MobileAddPostForm} />
+            <Redirect to="/" />
+          </Switch>
+        </div>
       </div>
     </Router>
   )

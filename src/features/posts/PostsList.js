@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 
 import { PostAuthor } from './PostAuthor'
 import { PostAuthorUsername } from './PostAuthorUsername'
@@ -9,6 +10,12 @@ import { ReactionButtons } from './ReactionButtons'
 
 export const PostsList = () => {
     const posts = useSelector((state) => state.posts)
+
+    let history = useHistory();
+
+    const onTweetButtonClicked = () => {
+        history.push('/compose/tweet')
+    }
 
     // Sort posts in reverse chronological order by datetime string
     const orderedPosts = posts
@@ -33,8 +40,13 @@ export const PostsList = () => {
     })
 
     return (
-        <section className="posts-list">
-            {renderedPosts}
-        </section>
+        <>
+            <section className="posts-list">
+                {renderedPosts}
+            </section>
+            <div>
+                <button id="mobile-tweet-button" onClick={onTweetButtonClicked}>+</button>
+            </div>
+        </>
     )
 }
