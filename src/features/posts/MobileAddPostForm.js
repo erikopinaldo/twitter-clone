@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from "react-router-dom";
 
 import { postAdded } from './postsSlice'
 
@@ -8,6 +9,7 @@ export const MobileAddPostForm = () => {
     const [userId, setUserId] = useState('')
 
     const dispatch = useDispatch()
+    let history = useHistory();
 
     const users = useSelector(state => state.users)
 
@@ -18,6 +20,7 @@ export const MobileAddPostForm = () => {
         if (content) {
             dispatch(postAdded(content, userId))
             setContent('')
+            history.push('/')
         }
     }
 
