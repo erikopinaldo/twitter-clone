@@ -141,6 +141,12 @@ section h1 {
   border-radius: 50%;
 }
 
+@media (min-width: 800px) {
+  #mobile-tweet-button {
+    display: none;
+  }
+}
+
 /* Add post form */
 
 .add-post-form {
