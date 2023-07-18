@@ -149,6 +149,10 @@ section h1 {
 
 /* Add post form */
 
+.mobile-add-post-form {
+  padding: 40px;
+}
+
 .add-post-form {
   display: none;
 }

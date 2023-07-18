@@ -10,6 +10,7 @@ import { Navbar } from './app/Navbar'
 
 import { PostsList } from './features/posts/PostsList'
 import { AddPostForm } from './features/posts/AddPostForm'
+import { MobileAddPostForm } from './features/posts/MobileAddPostForm'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                 </React.Fragment>
               )}
             />
+            <Route exact path="/compose/tweet" component={MobileAddPostForm} />
             <Redirect to="/" />
           </Switch>
         </div>
