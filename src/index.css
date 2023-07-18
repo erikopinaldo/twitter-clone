@@ -131,10 +131,14 @@ section h1 {
   font-size: 3rem;
 }
 
-.mobile-tweet-button {
+#mobile-tweet-button {
+  width: 56px;
+  height: 56px;
+  display: inline-block;
   position: fixed;
-  bottom: 80px;
-  right: 10px;
+  bottom: 70px;
+  right: 20px;
+  border-radius: 50%;
 }
 
 /* Add post form */
