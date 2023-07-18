@@ -33,8 +33,13 @@ export const PostsList = () => {
     })
 
     return (
-        <section className="posts-list">
-            {renderedPosts}
-        </section>
+        <>
+            <section className="posts-list">
+                {renderedPosts}
+            </section>
+            <div className="mobile-tweet-button">
+                <button>Feedback</button>
+            </div>
+        </>
     )
 }
