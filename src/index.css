@@ -23,6 +23,12 @@ p {
   font-size: 1.1rem;
 }
 
+/* User dropdown */
+
+.user-dropdown-container {
+  margin: 0 2rem 0 2rem;
+}
+
 /* Wrapper */
 
 .wrapper {
