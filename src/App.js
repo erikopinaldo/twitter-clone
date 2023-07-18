@@ -11,7 +11,7 @@ import { Navbar } from './app/Navbar'
 import { PostsList } from './features/posts/PostsList'
 import { AddPostForm } from './features/posts/AddPostForm'
 import { MobileAddPostForm } from './features/posts/MobileAddPostForm'
-import { UserDropdown } from './features/users/UserDropdown'
+import { UserDropdown } from './features/currentUser/UserDropdown'
 
 function App() {
   return (
