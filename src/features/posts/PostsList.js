@@ -38,7 +38,7 @@ export const PostsList = () => {
                 {renderedPosts}
             </section>
             <div className="mobile-tweet-button">
-                <button>Feedback</button>
+                <button>+</button>
             </div>
         </>
     )
