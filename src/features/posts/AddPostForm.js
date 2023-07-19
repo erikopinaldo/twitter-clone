@@ -9,8 +9,6 @@ export const AddPostForm = () => {
     const dispatch = useDispatch()
 
     const currentUser = useSelector(state => state.currentUser)[0]
-    console.log(currentUser)
-
     const onContentChanged = e => setContent(e.target.value)
 
     const onSavePostClicked = () => {

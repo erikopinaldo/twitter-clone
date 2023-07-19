@@ -11,8 +11,6 @@ export const MobileAddPostForm = () => {
     const history = useHistory()
 
     const currentUser = useSelector(state => state.currentUser)[0]
-    console.log(currentUser)
-
     const onContentChanged = e => setContent(e.target.value)
 
     const onSavePostClicked = () => {
