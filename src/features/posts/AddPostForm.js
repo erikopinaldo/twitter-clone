@@ -5,39 +5,24 @@ import { postAdded } from './postsSlice'
 
 export const AddPostForm = () => {
     const [content, setContent] = useState('')
-    const [userId, setUserId] = useState('')
 
     const dispatch = useDispatch()
 
-    const users = useSelector(state => state.users)
-
+    const currentUser = useSelector(state => state.currentUser)[0]
     const onContentChanged = e => setContent(e.target.value)
-    const onAuthorChanged = e => setUserId(e.target.value)
 
     const onSavePostClicked = () => {
         if (content) {
-            dispatch(postAdded(content, userId))
+            dispatch(postAdded(content, currentUser.id))
             setContent('')
         }
     }
 
-    const canSave = Boolean(content) && Boolean(userId)
-
-    const usersOptions = users.map(user => (
-        <option key={user.id} value={user.id}>
-            {user.name}
-        </option>
-    ))
+    const canSave = Boolean(content) 
 
     return (
         <section className='add-post-form'>
             <form>
-                {/* <label htmlFor="postAuthor">Author:</label> */}
-                <select id="postAuthor" value={userId} onChange={onAuthorChanged}>
-                    <option value=""></option>
-                    {usersOptions}
-                </select>
-                {/* <label htmlFor="postContent">Content:</label> */}
                 <textarea
                     id="postContent"
                     name="postContent"

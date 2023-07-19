@@ -6,41 +6,26 @@ import { postAdded } from './postsSlice'
 
 export const MobileAddPostForm = () => {
     const [content, setContent] = useState('')
-    const [userId, setUserId] = useState('')
 
     const dispatch = useDispatch()
-    let history = useHistory();
+    const history = useHistory()
 
-    const users = useSelector(state => state.users)
-
+    const currentUser = useSelector(state => state.currentUser)[0]
     const onContentChanged = e => setContent(e.target.value)
-    const onAuthorChanged = e => setUserId(e.target.value)
 
     const onSavePostClicked = () => {
         if (content) {
-            dispatch(postAdded(content, userId))
+            dispatch(postAdded(content, currentUser.id))
             setContent('')
             history.push('/')
         }
     }
 
-    const canSave = Boolean(content) && Boolean(userId)
-
-    const usersOptions = users.map(user => (
-        <option key={user.id} value={user.id}>
-            {user.name}
-        </option>
-    ))
+    const canSave = Boolean(content)
 
     return (
         <section className='mobile-add-post-form'>
             <form>
-                {/* <label htmlFor="postAuthor">Author:</label> */}
-                <select id="postAuthor" value={userId} onChange={onAuthorChanged}>
-                    <option value=""></option>
-                    {usersOptions}
-                </select>
-                {/* <label htmlFor="postContent">Content:</label> */}
                 <textarea
                     id="postContent"
                     name="postContent"
@@ -51,7 +36,7 @@ export const MobileAddPostForm = () => {
                     <button type="button" onClick={onSavePostClicked} disabled={!canSave}>
                         Tweet
                     </button>
-                </div> 
+                </div>
             </form>
         </section>
     )

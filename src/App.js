@@ -11,6 +11,7 @@ import { Navbar } from './app/Navbar'
 import { PostsList } from './features/posts/PostsList'
 import { AddPostForm } from './features/posts/AddPostForm'
 import { MobileAddPostForm } from './features/posts/MobileAddPostForm'
+import { UserDropdown } from './features/currentUser/UserDropdown'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               path="/"
               render={() => (
                 <React.Fragment>
+                  <UserDropdown />
                   <AddPostForm />
                   <PostsList />
                 </React.Fragment>
