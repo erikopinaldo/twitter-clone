@@ -31,7 +31,6 @@ export const UserDropdown = () => {
             <form>
                 <label htmlFor="postAuthor">User:</label>
                 <select id="postAuthor" value={currentUser.name} onChange={onUserSelected}>
-                    <option value=""></option>
                     {usersOptions}
                 </select>
             </form>
