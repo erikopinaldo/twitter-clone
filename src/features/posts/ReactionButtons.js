@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { reactionAdded } from './postsSlice'
 
@@ -11,6 +11,8 @@ const reactionEmoji = {
 
 export const ReactionButtons = ({ post }) => {
     const dispatch = useDispatch()
+
+    const currentUser = useSelector((state) => state.currentUser)
 
     const reactionButtons = Object.entries(reactionEmoji).map(([name, emoji]) => {
         let reaction
