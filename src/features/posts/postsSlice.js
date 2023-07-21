@@ -12,7 +12,15 @@ const initialState = [
             heart: {
                 count: 0,
                 users: [],
-            }
+            },
+            retweet: {
+                count: 0,
+                users: [],
+            },
+            reply: {
+                count: 0,
+                users: [],
+            },
         }
     },
     {
@@ -24,7 +32,15 @@ const initialState = [
             heart: {
                 count: 0,
                 users: [],
-            }
+            },
+            retweet: {
+                count: 0,
+                users: [],
+            },
+            reply: {
+                count: 0,
+                users: [],
+            },
         }
     },
 ]
@@ -48,7 +64,15 @@ const postsSlice = createSlice({
                             heart: {
                                 count: 0,
                                 users: [],
-                            } 
+                            },
+                            retweet: {
+                                count: 0,
+                                users: [],
+                            },
+                            reply: {
+                                count: 0,
+                                users: [],
+                            },
                         }
                     }
                 }
