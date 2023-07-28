@@ -27,11 +27,11 @@ export const PostsList = () => {
             <div className='post-excerpt-container' key={post.id}>
                 <article className="post-excerpt">
                     <div>
-                        <PostAuthor userId={post.user} />
-                        <PostAuthorUsername userId={post.user} />
+                        <PostAuthor userId={post.retweets ? post.retweets.user : post.user} />
+                        <PostAuthorUsername userId={post.retweets ? post.retweets.user : post.user} />
                         <TweetDate timestamp={post.date} />
                     </div>
-                    <p className="post-content">{post.content.substring(0, 100)}</p>
+                    <p className="post-content">{post.retweets ? post.retweets.content.substring(0, 100) : post.content.substring(0, 100)}</p>
 
                     <ReactionButtons post={post} />
                 </article>
