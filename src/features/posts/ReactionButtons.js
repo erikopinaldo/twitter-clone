@@ -29,7 +29,7 @@ export const ReactionButtons = ({ post }) => {
                     type="button"
                     className="muted-button reaction-button"
                     onClick={() =>
-                        dispatch(reactionAdded({ postId: post.id, reaction: name, currentUser }))
+                        dispatch(reactionAdded({ post, reaction: name, currentUser }))
                     }
                 >
                     {emoji} {post.reactions[name].count}
