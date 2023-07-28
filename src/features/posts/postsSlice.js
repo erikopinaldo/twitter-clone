@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, current } from '@reduxjs/toolkit'
 import { nanoid } from '@reduxjs/toolkit'
 import { sub } from 'date-fns'
 
@@ -118,9 +118,26 @@ const postsSlice = createSlice({
                 }
             }
         },
+        retweetAdded: {
+            reducer(state, action) {
+                state.push(action.payload)
+            },
+            prepare({ post, currentUser }) {
+                console.log(currentUser)
+                return {
+                    payload: {
+                        id: nanoid(),
+                        date: new Date().toISOString(),
+                        user: currentUser.id,
+                        retweets_id: post.id,
+                        retweets: post
+                    }
+                }
+            }
+        },
         reactionAdded(state, action) {
-            const { postId, reaction, currentUser } = action.payload
-            const existingPost = state.find(post => post.id === postId)
+            const { post, reaction, currentUser } = action.payload
+            const existingPost = state.find(postQuery => postQuery.id === post.id)
             if (existingPost && !existingPost.reactions[reaction].users.includes(currentUser.id)) {
                 existingPost.reactions[reaction].count++
                 existingPost.reactions[reaction].users.push(currentUser.id)
@@ -133,6 +150,6 @@ const postsSlice = createSlice({
     }
 })
 
-export const { postAdded, postUpdated, reactionAdded } = postsSlice.actions
+export const { postAdded, retweetAdded, postUpdated, reactionAdded } = postsSlice.actions
 
 export default postsSlice.reducer
