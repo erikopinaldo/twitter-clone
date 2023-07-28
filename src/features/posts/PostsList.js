@@ -12,6 +12,8 @@ import { RetweetLabel } from './RetweetLabel';
 export const PostsList = () => {
     const posts = useSelector((state) => state.posts)
 
+    const [currentUser] = useSelector((state) => state.currentUser)
+
     let history = useHistory();
 
     const onTweetButtonClicked = () => {
@@ -22,6 +24,12 @@ export const PostsList = () => {
     const orderedPosts = posts
         .slice()
         .sort((a, b) => b.date.localeCompare(a.date))
+        .filter(post => {
+            if (post.retweets && post.user === currentUser.id) {
+                return
+            }
+            else return post
+        })
 
     const renderedPosts = orderedPosts.map((post) => {
         return (
