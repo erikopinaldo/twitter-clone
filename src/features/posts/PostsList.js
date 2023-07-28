@@ -43,7 +43,7 @@ export const PostsList = () => {
                     </div>
                     <p className="post-content">{post.retweets ? post.retweets.content.substring(0, 100) : post.content.substring(0, 100)}</p>
 
-                    <ReactionButtons post={post.retweets ? post.retweets : post} />
+                    <ReactionButtons post={post.retweets ? posts.find(postQuery => postQuery.id === post.retweets.id) : post} />
                 </article>
             </div>          
         )
