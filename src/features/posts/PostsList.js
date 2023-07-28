@@ -7,6 +7,7 @@ import { PostAuthor } from './PostAuthor'
 import { PostAuthorUsername } from './PostAuthorUsername'
 import { TweetDate } from './TweetDate'
 import { ReactionButtons } from './ReactionButtons'
+import { RetweetLabel } from './RetweetLabel';
 
 export const PostsList = () => {
     const posts = useSelector((state) => state.posts)
@@ -27,6 +28,7 @@ export const PostsList = () => {
             <div className='post-excerpt-container' key={post.id}>
                 <article className="post-excerpt">
                     <div>
+                        <RetweetLabel retweetAuthorId={post.retweets ? post.user : null} />
                         <PostAuthor userId={post.retweets ? post.retweets.user : post.user} />
                         <PostAuthorUsername userId={post.retweets ? post.retweets.user : post.user} />
                         <TweetDate timestamp={post.date} />
