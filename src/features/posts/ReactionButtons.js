@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { reactionAdded } from './postsSlice'
+import { retweetAdded, reactionAdded } from './postsSlice'
 
 const reactionEmoji = {
     reply: '↩️',
@@ -14,6 +14,11 @@ export const ReactionButtons = ({ post }) => {
 
     const [currentUser] = useSelector((state) => state.currentUser)
 
+    const handleRetweet = (post, currentUser, reactionName) => {
+        dispatch(reactionAdded({ post, reaction: reactionName, currentUser }))
+        dispatch(retweetAdded({ post, currentUser, reaction: reactionName }))
+    }
+
     const reactionButtons = Object.entries(reactionEmoji).map(([name, emoji]) => {
         let reaction
 
@@ -25,6 +30,20 @@ export const ReactionButtons = ({ post }) => {
                     className="muted-button reaction-button"
                     onClick={() =>
                         dispatch(reactionAdded({ postId: post.id, reaction: name, currentUser }))
+                    }
+                >
+                    {emoji} {post.reactions[name].count}
+                </button>
+            )
+        }
+        else if (name === 'retweet') {
+            reaction = (
+                <button
+                    key={name}
+                    type="button"
+                    className="muted-button reaction-button"
+                    onClick={() =>
+                        handleRetweet(post, currentUser, name)
                     }
                 >
                     {emoji} {post.reactions[name].count}
