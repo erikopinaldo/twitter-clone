@@ -36,7 +36,7 @@ export const PostsList = () => {
             <div className='post-excerpt-container' key={post.id}>
                 <article className="post-excerpt">
                     <div>
-                        <RetweetLabel retweetAuthorId={post.retweets ? post.user : null} />
+                        <RetweetLabel retweetAuthorId={post.retweets ? post.user : null} parentAuthorId={post.retweets ? post.retweets.user : null} currentUser={currentUser} />
                         <PostAuthor userId={post.retweets ? post.retweets.user : post.user} />
                         <PostAuthorUsername userId={post.retweets ? post.retweets.user : post.user} />
                         <TweetDate timestamp={post.date} />
