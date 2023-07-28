@@ -35,7 +35,7 @@ export const PostsList = () => {
                     </div>
                     <p className="post-content">{post.retweets ? post.retweets.content.substring(0, 100) : post.content.substring(0, 100)}</p>
 
-                    <ReactionButtons post={post} />
+                    <ReactionButtons post={post.retweets ? post.retweets : post} />
                 </article>
             </div>          
         )
