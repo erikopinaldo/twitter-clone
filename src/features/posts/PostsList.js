@@ -25,7 +25,7 @@ export const PostsList = () => {
         .slice()
         .sort((a, b) => b.date.localeCompare(a.date))
         .filter(post => {
-            if (post.retweets && post.user === currentUser.id) {
+            if (post.retweets && (post.user === currentUser.id || post.retweets.user === currentUser.id)) {
                 return
             }
             else return post
