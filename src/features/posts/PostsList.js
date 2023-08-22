@@ -42,7 +42,7 @@ export const PostsList = () => {
                         <RetweetLabel retweetAuthorId={post.retweets ? post.user : null} parentAuthorId={post.retweets ? post.retweets.user : null} currentUser={currentUser} />
                         <PostAuthor userId={renderedPost.user} />
                         <PostAuthorUsername userId={renderedPost.user} />
-                        <TweetDate timestamp={post.date} />
+                        <TweetDate timestamp={renderedPost.date} />
                     </div>
                     <p className="post-content">{renderedPost.content.substring(0, 100)}</p>
 
