@@ -33,16 +33,18 @@ export const PostsList = () => {
         })
 
     const renderedPosts = orderedPosts.map((post) => {
+        const renderedPost = post.retweets ? post.retweets : post
+
         return (
             <div className='post-excerpt-container' key={post.id}>
                 <article className="post-excerpt">
                     <div>
                         <RetweetLabel retweetAuthorId={post.retweets ? post.user : null} parentAuthorId={post.retweets ? post.retweets.user : null} currentUser={currentUser} />
-                        <PostAuthor userId={post.retweets ? post.retweets.user : post.user} />
-                        <PostAuthorUsername userId={post.retweets ? post.retweets.user : post.user} />
+                        <PostAuthor userId={renderedPost.user} />
+                        <PostAuthorUsername userId={renderedPost.user} />
                         <TweetDate timestamp={post.date} />
                     </div>
-                    <p className="post-content">{post.retweets ? post.retweets.content.substring(0, 100) : post.content.substring(0, 100)}</p>
+                    <p className="post-content">{renderedPost.content.substring(0, 100)}</p>
 
                     <ReactionButtons post={post.retweets ? posts.find(postQuery => postQuery.id === post.retweets.id) : post} />
                 </article>
