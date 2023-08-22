@@ -25,6 +25,7 @@ export const PostsList = () => {
         .slice()
         .sort((a, b) => b.date.localeCompare(a.date))
         .filter(post => {
+            // Hide tweet if current user retweeted the tweet, or if the current user was the one that was retweeted 
             if (post.retweets && (post.user === currentUser.id || post.retweets.user === currentUser.id)) {
                 return
             }
