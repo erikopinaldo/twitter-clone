@@ -1,7 +1,8 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { retweetAdded, reactionAdded } from './postsSlice'
+import { retweetAdded, reactionAdded, reactionRemoved } from './postsSlice'
+import { current } from '@reduxjs/toolkit'
 
 const reactionEmoji = {
     reply: '↩️',
@@ -12,10 +13,22 @@ const reactionEmoji = {
 export const ReactionButtons = ({ post }) => {
     const dispatch = useDispatch()
 
+    const posts = useSelector((state) => state.posts)
     const [currentUser] = useSelector((state) => state.currentUser)
 
+    const handleReaction = (post, currentUser, reactionName) => {
+        const existingPost = posts.find(postQuery => postQuery.id === post.id)
+
+        if (existingPost && !existingPost.reactions[reactionName].users.includes(currentUser.id)) {
+            dispatch(reactionAdded({ post, reaction: reactionName, currentUser }))
+        }
+        else if (existingPost && existingPost.reactions[reactionName].users.includes(currentUser.id)) {
+            dispatch(reactionRemoved({ post, reaction: reactionName, currentUser }))
+        }
+    }
+
     const handleRetweet = (post, currentUser, reactionName) => {
-        dispatch(reactionAdded({ post, reaction: reactionName, currentUser }))
+        handleReaction(post, currentUser, reactionName)
         dispatch(retweetAdded({ post, currentUser, reaction: reactionName }))
     }
 
@@ -29,7 +42,7 @@ export const ReactionButtons = ({ post }) => {
                     type="button"
                     className="muted-button reaction-button"
                     onClick={() =>
-                        dispatch(reactionAdded({ post, reaction: name, currentUser }))
+                        handleReaction(post, currentUser, name)
                     }
                 >
                     {emoji} {post.reactions[name].count}
@@ -57,7 +70,7 @@ export const ReactionButtons = ({ post }) => {
                     type="button"
                     className="muted-button reaction-button"
                     onClick={() =>
-                        dispatch(reactionAdded({ postId: post.id, reaction: name, currentUser }))
+                        handleReaction(post, currentUser, name)
                     }
                 >
                     {emoji} {post.reactions[name].count}

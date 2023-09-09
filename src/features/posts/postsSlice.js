@@ -98,18 +98,20 @@ const postsSlice = createSlice({
         reactionAdded(state, action) {
             const { post, reaction, currentUser } = action.payload
             const existingPost = state.find(postQuery => postQuery.id === post.id)
-            if (existingPost && !existingPost.reactions[reaction].users.includes(currentUser.id)) {
-                existingPost.reactions[reaction].count++
-                existingPost.reactions[reaction].users.push(currentUser.id)
-            }
-            else if (existingPost && existingPost.reactions[reaction].users.includes(currentUser.id)) {
-                existingPost.reactions[reaction].count--
-                existingPost.reactions[reaction].users = existingPost.reactions[reaction].users.filter(user => user !== currentUser.id)
-            }
+
+            existingPost.reactions[reaction].count++
+            existingPost.reactions[reaction].users.push(currentUser.id)
+        }, 
+        reactionRemoved(state, action) {
+            const { post, reaction, currentUser } = action.payload
+            const existingPost = state.find(postQuery => postQuery.id === post.id)
+ 
+            existingPost.reactions[reaction].count--
+            existingPost.reactions[reaction].users = existingPost.reactions[reaction].users.filter(user => user !== currentUser.id)
         }
     }
 })
 
-export const { postAdded, retweetAdded, postUpdated, reactionAdded } = postsSlice.actions
+export const { postAdded, retweetAdded, postUpdated, reactionAdded, reactionRemoved } = postsSlice.actions
 
 export default postsSlice.reducer
