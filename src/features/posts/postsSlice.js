@@ -97,8 +97,6 @@ const postsSlice = createSlice({
         },
         retweetRemoved(state, action) {
             const { existingRetweet, reaction, currentUser } = action.payload
-
-            console.log("existing retweet id" + existingRetweet.id)
  
             state = state.filter(postQuery => postQuery.id !== existingRetweet.id)
             
