@@ -95,6 +95,19 @@ const postsSlice = createSlice({
                 }
             }
         },
+        retweetRemoved(state, action) {
+            const { existingRetweet, reaction, currentUser } = action.payload
+
+            console.log("existing retweet id" + existingRetweet.id)
+ 
+            state = state.filter(postQuery => {
+                console.log(state)
+                console.log(postQuery.id)
+                console.log(postQuery.id === existingRetweet.id)
+                return postQuery.id !== existingRetweet.id
+            })
+            return state
+        },
         reactionAdded(state, action) {
             const { post, reaction, currentUser } = action.payload
             const existingPost = state.find(postQuery => postQuery.id === post.id)
@@ -112,6 +125,6 @@ const postsSlice = createSlice({
     }
 })
 
-export const { postAdded, retweetAdded, postUpdated, reactionAdded, reactionRemoved } = postsSlice.actions
+export const { postAdded, retweetAdded, retweetRemoved, postUpdated, reactionAdded, reactionRemoved } = postsSlice.actions
 
 export default postsSlice.reducer
