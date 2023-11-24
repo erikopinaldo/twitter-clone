@@ -100,12 +100,8 @@ const postsSlice = createSlice({
 
             console.log("existing retweet id" + existingRetweet.id)
  
-            state = state.filter(postQuery => {
-                console.log(state)
-                console.log(postQuery.id)
-                console.log(postQuery.id === existingRetweet.id)
-                return postQuery.id !== existingRetweet.id
-            })
+            state = state.filter(postQuery => postQuery.id !== existingRetweet.id)
+            
             return state
         },
         reactionAdded(state, action) {
