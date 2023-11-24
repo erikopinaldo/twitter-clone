@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { retweetAdded, reactionAdded, reactionRemoved } from './postsSlice'
+import { retweetAdded, retweetRemoved, reactionAdded, reactionRemoved } from './postsSlice'
 import { current } from '@reduxjs/toolkit'
 
 const reactionEmoji = {
@@ -28,8 +28,19 @@ export const ReactionButtons = ({ post }) => {
     }
 
     const handleRetweet = (post, currentUser, reactionName) => {
+        const existingPost = posts.find(postQuery => postQuery.id === post.id)
+        const existingRetweet = posts.find(postQuery => {
+            return postQuery.retweets_id === post.id && postQuery.user === currentUser.id
+        })
+
+        if (!existingRetweet) {
+            dispatch(retweetAdded({ post, currentUser, reaction: reactionName }))
+        }
+        else {
+            dispatch(retweetRemoved({ existingRetweet, reaction: reactionName, currentUser }))
+        }
+
         handleReaction(post, currentUser, reactionName)
-        dispatch(retweetAdded({ post, currentUser, reaction: reactionName }))
     }
 
     const reactionButtons = Object.entries(reactionEmoji).map(([name, emoji]) => {
