@@ -45,13 +45,21 @@ export const ReactionButtons = ({ post }) => {
 
     const reactionButtons = Object.entries(reactionEmoji).map(([name, emoji]) => {
         let reaction
+        let buttonStyleOptions
+
+        if (post.reactions[name].users.includes(currentUser.id)) {
+            buttonStyleOptions = "muted-button reaction-button selected-reaction-button"
+        }
+        else {
+            buttonStyleOptions = "muted-button reaction-button"
+        }
 
         if (name === 'heart') {
             reaction = (
                 <button
                     key={name}
                     type="button"
-                    className="muted-button reaction-button"
+                    className={buttonStyleOptions}
                     onClick={() =>
                         handleReaction(post, currentUser, name)
                     }
@@ -65,7 +73,7 @@ export const ReactionButtons = ({ post }) => {
                 <button
                     key={name}
                     type="button"
-                    className="muted-button reaction-button"
+                    className={buttonStyleOptions}
                     onClick={() =>
                         handleRetweet(post, currentUser, name)
                     }
@@ -79,7 +87,7 @@ export const ReactionButtons = ({ post }) => {
                 <button
                     key={name}
                     type="button"
-                    className="muted-button reaction-button"
+                    className={buttonStyleOptions}
                     onClick={() =>
                         handleReaction(post, currentUser, name)
                     }
