@@ -247,6 +247,10 @@ button.reaction-button {
   white-space: nowrap;
 }
 
+button.reaction-button.selected-reaction-button {
+  background-color: lightblue;
+}
+
 .spinner {
   display: flex;
   flex-direction: column;
