@@ -1,7 +1,8 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { reactionAdded } from './postsSlice'
+import { retweetAdded, retweetRemoved, reactionAdded, reactionRemoved } from './postsSlice'
+import { current } from '@reduxjs/toolkit'
 
 const reactionEmoji = {
     reply: '↩️',
@@ -12,19 +13,69 @@ const reactionEmoji = {
 export const ReactionButtons = ({ post }) => {
     const dispatch = useDispatch()
 
+    const posts = useSelector((state) => state.posts)
     const [currentUser] = useSelector((state) => state.currentUser)
+
+    const handleReaction = (post, currentUser, reactionName) => {
+        const existingPost = posts.find(postQuery => postQuery.id === post.id)
+
+        if (existingPost && !existingPost.reactions[reactionName].users.includes(currentUser.id)) {
+            dispatch(reactionAdded({ post, reaction: reactionName, currentUser }))
+        }
+        else if (existingPost && existingPost.reactions[reactionName].users.includes(currentUser.id)) {
+            dispatch(reactionRemoved({ post, reaction: reactionName, currentUser }))
+        }
+    }
+
+    const handleRetweet = (post, currentUser, reactionName) => {
+        const existingPost = posts.find(postQuery => postQuery.id === post.id)
+        const existingRetweet = posts.find(postQuery => {
+            return postQuery.retweets_id === post.id && postQuery.user === currentUser.id
+        })
+
+        if (!existingRetweet) {
+            dispatch(retweetAdded({ post, currentUser, reaction: reactionName }))
+        }
+        else {
+            dispatch(retweetRemoved({ existingRetweet, reaction: reactionName, currentUser }))
+        }
+
+        handleReaction(post, currentUser, reactionName)
+    }
 
     const reactionButtons = Object.entries(reactionEmoji).map(([name, emoji]) => {
         let reaction
+        let buttonStyleOptions
+
+        if (post.reactions[name].users.includes(currentUser.id)) {
+            buttonStyleOptions = "muted-button reaction-button selected-reaction-button"
+        }
+        else {
+            buttonStyleOptions = "muted-button reaction-button"
+        }
 
         if (name === 'heart') {
             reaction = (
                 <button
                     key={name}
                     type="button"
-                    className="muted-button reaction-button"
+                    className={buttonStyleOptions}
                     onClick={() =>
-                        dispatch(reactionAdded({ postId: post.id, reaction: name, currentUser }))
+                        handleReaction(post, currentUser, name)
+                    }
+                >
+                    {emoji} {post.reactions[name].count}
+                </button>
+            )
+        }
+        else if (name === 'retweet') {
+            reaction = (
+                <button
+                    key={name}
+                    type="button"
+                    className={buttonStyleOptions}
+                    onClick={() =>
+                        handleRetweet(post, currentUser, name)
                     }
                 >
                     {emoji} {post.reactions[name].count}
@@ -36,12 +87,12 @@ export const ReactionButtons = ({ post }) => {
                 <button
                     key={name}
                     type="button"
-                    className="muted-button reaction-button"
+                    className={buttonStyleOptions}
                     onClick={() =>
-                        console.log(name)
+                        handleReaction(post, currentUser, name)
                     }
                 >
-                    {emoji} {post.reactions[name]}
+                    {emoji} {post.reactions[name].count}
                 </button>
             )
         }

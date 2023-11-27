@@ -7,9 +7,12 @@ import { PostAuthor } from './PostAuthor'
 import { PostAuthorUsername } from './PostAuthorUsername'
 import { TweetDate } from './TweetDate'
 import { ReactionButtons } from './ReactionButtons'
+import { RetweetLabel } from './RetweetLabel';
 
 export const PostsList = () => {
     const posts = useSelector((state) => state.posts)
+
+    const [currentUser] = useSelector((state) => state.currentUser)
 
     let history = useHistory();
 
@@ -21,19 +24,29 @@ export const PostsList = () => {
     const orderedPosts = posts
         .slice()
         .sort((a, b) => b.date.localeCompare(a.date))
+        .filter(post => {
+            // Hide tweet if current user retweeted the tweet, or if the current user was the one that was retweeted 
+            if (post.retweets && (post.user === currentUser.id || post.retweets.user === currentUser.id)) {
+                return
+            }
+            else return post
+        })
 
     const renderedPosts = orderedPosts.map((post) => {
+        const renderedPost = post.retweets ? post.retweets : post
+
         return (
             <div className='post-excerpt-container' key={post.id}>
                 <article className="post-excerpt">
                     <div>
-                        <PostAuthor userId={post.user} />
-                        <PostAuthorUsername userId={post.user} />
-                        <TweetDate timestamp={post.date} />
+                        <RetweetLabel retweetAuthorId={post.retweets ? post.user : null} parentAuthorId={post.retweets ? post.retweets.user : null} currentUser={currentUser} />
+                        <PostAuthor userId={renderedPost.user} />
+                        <PostAuthorUsername userId={renderedPost.user} />
+                        <TweetDate timestamp={renderedPost.date} />
                     </div>
-                    <p className="post-content">{post.content.substring(0, 100)}</p>
+                    <p className="post-content">{renderedPost.content.substring(0, 100)}</p>
 
-                    <ReactionButtons post={post} />
+                    <ReactionButtons post={post.retweets ? posts.find(postQuery => postQuery.id === post.retweets.id) : post} />
                 </article>
             </div>          
         )

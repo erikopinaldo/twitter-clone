@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, current } from '@reduxjs/toolkit'
 import { nanoid } from '@reduxjs/toolkit'
 import { sub } from 'date-fns'
 
@@ -12,7 +12,15 @@ const initialState = [
             heart: {
                 count: 0,
                 users: [],
-            }
+            },
+            retweet: {
+                count: 0,
+                users: [],
+            },
+            reply: {
+                count: 0,
+                users: [],
+            },
         }
     },
     {
@@ -24,7 +32,15 @@ const initialState = [
             heart: {
                 count: 0,
                 users: [],
-            }
+            },
+            retweet: {
+                count: 0,
+                users: [],
+            },
+            reply: {
+                count: 0,
+                users: [],
+            },
         }
     },
 ]
@@ -48,27 +64,61 @@ const postsSlice = createSlice({
                             heart: {
                                 count: 0,
                                 users: [],
-                            } 
+                            },
+                            retweet: {
+                                count: 0,
+                                users: [],
+                            },
+                            reply: {
+                                count: 0,
+                                users: [],
+                            },
                         }
                     }
                 }
             }
         },
+        retweetAdded: {
+            reducer(state, action) {
+                state.push(action.payload)
+            },
+            prepare({ post, currentUser }) {
+                console.log(currentUser)
+                return {
+                    payload: {
+                        id: nanoid(),
+                        date: new Date().toISOString(),
+                        user: currentUser.id,
+                        retweets_id: post.id,
+                        retweets: post
+                    }
+                }
+            }
+        },
+        retweetRemoved(state, action) {
+            const { existingRetweet, reaction, currentUser } = action.payload
+ 
+            state = state.filter(postQuery => postQuery.id !== existingRetweet.id)
+            
+            return state
+        },
         reactionAdded(state, action) {
-            const { postId, reaction, currentUser } = action.payload
-            const existingPost = state.find(post => post.id === postId)
-            if (existingPost && !existingPost.reactions[reaction].users.includes(currentUser.id)) {
-                existingPost.reactions[reaction].count++
-                existingPost.reactions[reaction].users.push(currentUser.id)
-            }
-            else if (existingPost && existingPost.reactions[reaction].users.includes(currentUser.id)) {
-                existingPost.reactions[reaction].count--
-                existingPost.reactions[reaction].users = existingPost.reactions[reaction].users.filter(user => user !== currentUser.id)
-            }
+            const { post, reaction, currentUser } = action.payload
+            const existingPost = state.find(postQuery => postQuery.id === post.id)
+
+            existingPost.reactions[reaction].count++
+            existingPost.reactions[reaction].users.push(currentUser.id)
+        }, 
+        reactionRemoved(state, action) {
+            const { post, reaction, currentUser } = action.payload
+            const existingPost = state.find(postQuery => postQuery.id === post.id)
+ 
+            existingPost.reactions[reaction].count--
+            existingPost.reactions[reaction].users = existingPost.reactions[reaction].users.filter(user => user !== currentUser.id)
         }
     }
 })
 
-export const { postAdded, postUpdated, reactionAdded } = postsSlice.actions
+export const { postAdded, retweetAdded, retweetRemoved, postUpdated, reactionAdded, reactionRemoved } = postsSlice.actions
 
 export default postsSlice.reducer
