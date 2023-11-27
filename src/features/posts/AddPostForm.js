@@ -11,29 +11,39 @@ export const AddPostForm = () => {
     const currentUser = useSelector(state => state.currentUser)[0]
     const onContentChanged = e => setContent(e.target.value)
 
-    const onSavePostClicked = () => {
+    const handleUserKeyPress = e => {
+        if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            onSavePostClicked();
+        }
+    };
+
+    const onSavePostClicked = (e) => {
+        if (e) e.preventDefault()
+
         if (content) {
             dispatch(postAdded(content, currentUser.id))
             setContent('')
         }
     }
 
-    const canSave = Boolean(content) 
+    const canSave = Boolean(content)
 
     return (
         <section className='add-post-form'>
-            <form>
+            <form onSubmit={onSavePostClicked}>
                 <textarea
                     id="postContent"
                     name="postContent"
                     value={content}
                     onChange={onContentChanged}
+                    onKeyDown={handleUserKeyPress}
                 />
                 <div className='tweet-button-container'>
                     <button type="button" onClick={onSavePostClicked} disabled={!canSave}>
                         Tweet
                     </button>
-                </div> 
+                </div>
             </form>
         </section>
     )
