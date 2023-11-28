@@ -3,7 +3,7 @@ Frontend for a Twitter clone using Redux for state management. Project was used 
 
 **Link to project:** https://twitter-clone-erikopinaldo.vercel.app/
 
-![Twitter clone demo](\public\twitter_clone.gif)
+![Twitter clone demo](/public/twitter_clone.gif)
 
 ## How it's made
 
