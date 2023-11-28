@@ -81,7 +81,7 @@ The `postsSlice` has these reducers:
 * `reactionAdded`: increments the count of replies/retweets/likes for a target tweet. Reaction counts are stored within the tweet object, along with an array containing the users that actioned the tweet
 * `reactionRemoved`: decrements the count of replies/retweets/likes for a target tweet. Also removes the user who actioned the tweet from the reaction-user array for the target tweet
 
-#### Current user slice
+#### 3. Current user slice
 
 This feature tracks the currently selected user so that the correct user can be attributed to newly added tweets, retweets, and likes. 
 
