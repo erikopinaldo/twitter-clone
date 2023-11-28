@@ -78,6 +78,7 @@ The `postsSlice` has these reducers:
 * `postAdded`: add new tweet to store
 * `retweetAdded`: add new retweet to store
   * Currently references the entire parent tweet object 
+* `retweetRemoved`: removes target retweet from store 
 * `reactionAdded`: increments the count of replies/retweets/likes for a target tweet. Reaction counts are stored within the tweet object, along with an array containing the users that actioned the tweet
 * `reactionRemoved`: decrements the count of replies/retweets/likes for a target tweet. Also removes the user who actioned the tweet from the reaction-user array for the target tweet
 
