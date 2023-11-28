@@ -1,46 +1,88 @@
-# Redux Essentials Tutorial Example
+# Twitter clone
+Frontend for a Twitter clone using Redux for state management. Project was used to learn more about Redux. 
 
-This project contains the setup and code from the "Redux Essentials" tutorial in the Redux docs ( https://redux.js.org/tutorials/essentials/part-1-overview-concepts ).
+**Link to project:** https://twitter-clone-erikopinaldo.vercel.app/
 
-The `master` branch has a single commit that already has the initial project configuration in place. You can use this to follow along with the instructions from the tutorial.
+![Twitter clone demo](\public\twitter_clone.gif)
 
-The `tutorial-steps` branch has the actual code commits from the tutorial. You can look at these to see how the official tutorial actually implements each piece of functionality along the way.
+## How it's made
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+### Features
+* Add new tweet 
+* Like tweet
+* Retweet 
+  * Retweets show up for other users 
+* Temporary: switch users without auth
 
-> **Note**: If you are using Node 17, this project may not start correctly due to a known issue with Webpack and Node's OpenSSL changes, which causes an error message containing `ERR_OSSL_EVP_UNSUPPORTED`.  
-> You can work around this by setting a `NODE_OPTIONS=--openssl-legacy-provider` environment variable before starting the dev server.
-> Details: https://github.com/webpack/webpack/issues/14532#issuecomment-947012063
+**Tech used:** React, Redux, [Primitive UI](https://taniarascia.github.io/primitive/)
 
-## Available Scripts
+### Components
+Currently, the bulk of the project's functionalities exist on the home route. Present on this home page are: 
 
-In the project directory, you can run:
+* Nav bar (currently non-functional)
+* User selection drop-down menu
+  * This allows you to view the timeline based on the user you select. For example, if you select Tianna and retweet something, you will see the **Retweet** button change to an "active" state. However, the retweeted tweet item will not show up in your feed unless you switch users. 
+* New tweet form
+  * Allows you to send out a new tweet attributed to the user selected in the user selection drop-down menu
+* Tweet feed
+  * Shows all tweets from all users, including retweets 
+* Tweet action buttons 
+  * Reply (currently non-functional)
+  * Retweet: creates a retweet entity and tracks number of retweets
+  * Like: tracks number of likes 
 
-### `yarn start`
+### State management 
+There are currently 3 main categories of data tracked by Redux's state management logic: users, tweets, and currently selected user (from the user drop-down menu)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### 1. Users slice
+This is currently a read-only set of users, so there are no user-related reducers/actions. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+#### 2. Tweets slice
+There are 2 types of tweets currently stored in the `postsSlice`: tweets and retweets. 
 
-### `yarn test`
+The tweet entity has a shape like this: 
+```
+{
+    id: '1',
+    content: 'Hello!',
+    user: '0',
+    date: sub(new Date(), { minutes: 10 }).toISOString(),
+    reactions: {
+        heart: {
+            count: 0,
+            users: [],
+        },
+        retweet: {
+            count: 0,
+            users: [],
+        },
+        reply: {
+            count: 0,
+            users: [],
+        },
+    }
+}
+```
+The retweet entity has a shape like this: 
+```
+{
+    id: nanoid(),
+    date: new Date().toISOString(),
+    user: currentUser.id,
+    retweets_id: post.id,
+    retweets: post
+}
+``` 
+The `postsSlice` has these reducers: 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* `postAdded`: add new tweet to store
+* `retweetAdded`: add new retweet to store
+  * Currently references the entire parent tweet object 
+* `reactionAdded`: increments the count of replies/retweets/likes for a target tweet. Reaction counts are stored within the tweet object, along with an array containing the users that actioned the tweet
+* `reactionRemoved`: decrements the count of replies/retweets/likes for a target tweet. Also removes the user who actioned the tweet from the reaction-user array for the target tweet
 
-### `yarn build`
+#### Current user slice
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This feature tracks the currently selected user so that the correct user can be attributed to newly added tweets, retweets, and likes. 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The `currentUserSlice` contains the reducer `currentUserSelected`, which updates the currently selected user. 
