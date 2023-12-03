@@ -24,16 +24,28 @@ export const PostsList = () => {
         .sort((a, b) => b.date.localeCompare(a.date))
         .filter(post => {
             // Hide tweet if current user retweeted the tweet, or if the current user was the one that was retweeted 
-            if (post.retweets_id && (post.user === currentUser.id || posts.find(postQuery => postQuery.id === post.retweets_id).user === currentUser.id)) {
-                return
+
+            if (post.retweets_id) {
+                const parentTweet = posts.find(postQuery => postQuery.id === post.retweets_id)
+
+                if (post.user === currentUser.id || parentTweet.user === currentUser.id) {
+                    return
+                }
+
+                else return post
             }
+
             else return post
         })
 
     const renderedPosts = orderedPosts.map((post) => {
-        const renderedPost = post.retweets_id ? posts.find(postQuery => postQuery.id === post.retweets_id) : post
-
-        console.log(renderedPost)
+        let renderedPost
+        
+        if (post.retweets_id) {
+            renderedPost = posts.find(postQuery => postQuery.id === post.retweets_id)
+        }
+        
+        else renderedPost = post
 
         return (
             <div className='post-excerpt-container' key={post.id}>
