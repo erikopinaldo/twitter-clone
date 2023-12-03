@@ -42,9 +42,10 @@ export const PostsList = () => {
         let renderedPost
         
         if (post.retweets_id) {
+            // Get parent tweet content 
             renderedPost = posts.find(postQuery => postQuery.id === post.retweets_id)
         }
-        
+
         else renderedPost = post
 
         return (
