@@ -83,7 +83,6 @@ const postsSlice = createSlice({
                 state.push(action.payload)
             },
             prepare({ postId, currentUser }) {
-                console.log('post ID: ' + postId)
                 return {
                     payload: {
                         id: nanoid(),
