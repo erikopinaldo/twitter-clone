@@ -36,7 +36,7 @@ export const ReactionButtons = ({ post }) => {
             dispatch(retweetAdded({ postId, currentUser, reaction: reactionName }))
         }
         else {
-            dispatch(retweetRemoved({ existingRetweet, reaction: reactionName, currentUser }))
+            dispatch(retweetRemoved({ existingRetweet }))
         }
 
         handleReaction(post, currentUser, reactionName)
