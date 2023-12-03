@@ -12,11 +12,6 @@ const currentUsersSlice = createSlice({
             reducer(state, action) {
                 return action.payload
             },
-            prepare(userId) {
-                return {
-                    payload: userId
-                }
-            }
         }
     }
 })
