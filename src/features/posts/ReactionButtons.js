@@ -27,14 +27,13 @@ export const ReactionButtons = ({ post }) => {
         }
     }
 
-    const handleRetweet = (post, currentUser, reactionName) => {
-        const existingPost = posts.find(postQuery => postQuery.id === post.id)
+    const handleRetweet = (postId, currentUser, reactionName) => {
         const existingRetweet = posts.find(postQuery => {
             return postQuery.retweets_id === post.id && postQuery.user === currentUser.id
         })
 
         if (!existingRetweet) {
-            dispatch(retweetAdded({ post, currentUser, reaction: reactionName }))
+            dispatch(retweetAdded({ postId, currentUser, reaction: reactionName }))
         }
         else {
             dispatch(retweetRemoved({ existingRetweet, reaction: reactionName, currentUser }))
@@ -75,7 +74,7 @@ export const ReactionButtons = ({ post }) => {
                     type="button"
                     className={buttonStyleOptions}
                     onClick={() =>
-                        handleRetweet(post, currentUser, name)
+                        handleRetweet(post.id, currentUser, name)
                     }
                 >
                     {emoji} {post.reactions[name].count}
