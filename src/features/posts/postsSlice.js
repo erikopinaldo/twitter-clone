@@ -82,15 +82,14 @@ const postsSlice = createSlice({
             reducer(state, action) {
                 state.push(action.payload)
             },
-            prepare({ post, currentUser }) {
-                console.log(currentUser)
+            prepare({ postId, currentUser }) {
+                console.log('post ID: ' + postId)
                 return {
                     payload: {
                         id: nanoid(),
                         date: new Date().toISOString(),
                         user: currentUser.id,
-                        retweets_id: post.id,
-                        retweets: post
+                        retweets_id: postId
                     }
                 }
             }
