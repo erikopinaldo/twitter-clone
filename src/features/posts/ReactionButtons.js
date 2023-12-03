@@ -2,7 +2,6 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { retweetAdded, retweetRemoved, reactionAdded, reactionRemoved } from './postsSlice'
-import { current } from '@reduxjs/toolkit'
 
 const reactionEmoji = {
     reply: '↩️',
