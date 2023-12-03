@@ -10,8 +10,6 @@ import { RetweetLabel } from './RetweetLabel';
 
 export const PostsList = () => {
     const posts = useSelector((state) => state.posts)
-    console.log(posts)
-
     const [currentUser] = useSelector((state) => state.currentUser)
 
     let history = useHistory();
