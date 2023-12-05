@@ -12,7 +12,7 @@ import { PostsList } from './features/posts/PostsList'
 import { AddPostForm } from './features/posts/AddPostForm'
 import { MobileAddPostForm } from './features/posts/MobileAddPostForm'
 import { UserDropdown } from './features/currentUser/UserDropdown'
-import { ViewSelector } from './features/posts/ViewSelector'
+import { ViewSelector } from './features/currentTimelineView/ViewSelector'
 
 function App() {
   return (
