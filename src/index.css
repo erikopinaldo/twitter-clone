@@ -181,6 +181,10 @@ section h1 {
   cursor: pointer;
 }
 
+.selected-view {
+  border-bottom: solid 4px rgb(14 165 233);
+}
+
 /* Add post form */
 
 .mobile-add-post-form {
