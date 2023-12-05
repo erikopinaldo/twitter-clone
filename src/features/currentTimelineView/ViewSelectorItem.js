@@ -14,8 +14,6 @@ export const ViewSelectorItem = ({ children }) => {
 
     const styleOptions = currentTimelineView === children ? 'selected-view' : null
 
-    console.log(children)
-
     return (
         <li
             className={styleOptions}
