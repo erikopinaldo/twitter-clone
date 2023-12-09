@@ -101,12 +101,21 @@ nav section {
   border-radius: 9999px;
 }
 
+.navLink-content {
+  display: flex;
+}
+
 .navLink a {
   text-decoration: none;
 }
 
 .navLink:hover {
   background-color: var(--hover-color);
+}
+
+.nav-icon {
+  height: 1.75rem;
+  width: 1.75rem;
 }
 
 .navLink-text {
