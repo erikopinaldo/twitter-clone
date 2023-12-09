@@ -58,12 +58,24 @@ p {
   border-top: var(--border-color);
 }
 
-.navbar a {
-  color: #f2f2f2;
-  text-align: left;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+.logo-wrapper {
+  margin-left: 5px;
+  border-radius: 9999px;
+}
+
+.logo-container {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 9999px;
+  line-height: 0%;
+}
+
+.logo-container:hover {
+  background-color: var(--hover-color);
+}
+
+#logo {
+  height: 2rem;
 }
 
 nav section {
@@ -80,12 +92,20 @@ nav section {
   justify-content: space-around;
 }
 
-.navLinks a {
+.navLink {
+  color: #f2f2f2;
+  text-align: left;
+  font-size: 17px;
+  padding: 14px 16px;
   margin-left: 5px;
   border-radius: 9999px;
 }
 
-.navLinks a:hover {
+.navLink a {
+  text-decoration: none;
+}
+
+.navLink:hover {
   background-color: var(--hover-color);
 }
 
@@ -109,7 +129,7 @@ nav section {
     padding: 0px 20px 0px 20px;
   }
 
-  .navLinks, .navLinks a {
+  .navLinks, .navLink {
     display: block;
   }
 
