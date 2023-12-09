@@ -212,6 +212,7 @@ section h1 {
   outline: none;
   resize: none;
   box-shadow: none;
+  font-size: 20px;
 }
 
 @media (min-width: 800px) {
