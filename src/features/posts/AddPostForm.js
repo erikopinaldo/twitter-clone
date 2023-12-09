@@ -35,6 +35,7 @@ export const AddPostForm = () => {
                 <textarea
                     id="postContent"
                     name="postContent"
+                    placeholder='What is happening?!'
                     value={content}
                     onChange={onContentChanged}
                     onKeyDown={handleUserKeyPress}
