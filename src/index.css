@@ -81,6 +81,7 @@ nav section {
 
 .navLinks a {
   margin-left: 5px;
+  border-radius: 9999px;
 }
 
 .navLinks a:hover {
