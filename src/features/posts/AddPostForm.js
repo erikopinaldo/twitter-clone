@@ -42,7 +42,7 @@ export const AddPostForm = () => {
                 />
                 <div className='tweet-button-container'>
                     <button type="button" onClick={onSavePostClicked} disabled={!canSave}>
-                        Tweet
+                        Post
                     </button>
                 </div>
             </form>
