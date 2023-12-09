@@ -103,6 +103,7 @@ nav section {
 
 .navLink-content {
   display: flex;
+  align-items: center;
 }
 
 .navLink a {
@@ -111,6 +112,10 @@ nav section {
 
 .navLink:hover {
   background-color: var(--hover-color);
+}
+
+.nav-icon-container {
+  line-height: 0%;
 }
 
 .nav-icon {
@@ -144,6 +149,7 @@ nav section {
 
   .navLink-text {
     display: inline-block;
+    margin-left: 20px;
     font-size: 20px;
   }
 }
