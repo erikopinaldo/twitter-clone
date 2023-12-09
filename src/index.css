@@ -362,7 +362,9 @@ p.post-content {
 
 button:disabled,
 button:disabled:hover {
+  background: #0366ee;
   opacity: 0.5;
+  cursor: default;
 }
 
 button.reaction-button {
