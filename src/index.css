@@ -273,6 +273,11 @@ section h1 {
     border-bottom: var(--border-color);
 }
 
+.post-excerpt-container:hover {
+  cursor: pointer;
+  background-color: var(--hover-color);
+}
+
 .post-excerpt {
   padding: 0.75rem 1rem;
 }
