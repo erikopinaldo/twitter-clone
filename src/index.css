@@ -196,6 +196,13 @@ section h1 {
   display: none;
 }
 
+#postContent {
+  border: none;
+  outline: none;
+  resize: none;
+  box-shadow: none;
+}
+
 @media (min-width: 800px) {
   .add-post-form {
       display: block;
