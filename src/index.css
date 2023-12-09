@@ -189,11 +189,19 @@ section h1 {
 }
 
 .view-selector-item {
+  position: relative;
   padding: 16px 0;
 }
 
 .selected-view {
-  border-bottom: solid 4px rgb(14 165 233);
+  height: 4px;
+  min-width: 53px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  border-radius: 9999px;
+  background-color: rgb(14 165 233);
+  /* border-bottom: solid 4px rgb(14 165 233); */
 }
 
 /* Add post form */
