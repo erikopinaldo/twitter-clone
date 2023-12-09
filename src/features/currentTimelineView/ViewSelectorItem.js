@@ -12,12 +12,17 @@ export const ViewSelectorItem = ({ children }) => {
         dispatch(currentTimelineViewSelected(view))
     }
 
-    const styleOptions = currentTimelineView === children ? 'selected-view' : null
+    const styleOptions = currentTimelineView === children ? 'view-selector-item selected-view' : 'view-selector-item'
 
     return (
-        <li
-            className={styleOptions}
-            onClick={(e) => handleViewClick(e.target.textContent)}>{children}
-        </li>
+        <div className='view-selector-item-container'>
+            <div
+                className={styleOptions}
+                onClick={(e) => handleViewClick(e.target.textContent)}>
+                <span>
+                    {children}
+                </span>
+            </div>
+        </div>
     )
 }
