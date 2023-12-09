@@ -83,6 +83,7 @@ nav section {
 @media (min-width: 800px) {
   .App {
     margin-left: var(--nav-width);
+    max-width: 600px;
   }
 
   .navbar {
