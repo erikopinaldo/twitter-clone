@@ -198,6 +198,7 @@ section h1 {
 
 #postContent {
   border: none;
+  border-bottom: 1px solid #dedede;
   outline: none;
   resize: none;
   box-shadow: none;
