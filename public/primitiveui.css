@@ -755,7 +755,7 @@ button,
   -webkit-appearance: none;
   display: inline-block;
   border: 1px solid #0366ee;
-  border-radius: 4px;
+  border-radius: 9999px;
   background: #0366ee;
   color: #ffffff;
   font-weight: 600;
