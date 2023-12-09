@@ -59,8 +59,7 @@ p {
 }
 
 .logo-wrapper {
-  margin-left: 5px;
-  border-radius: 9999px;
+  display: none;
 }
 
 .logo-container {
@@ -145,6 +144,12 @@ nav section {
 
   .navLinks, .navLink {
     display: block;
+  }
+
+  .logo-wrapper {
+    display: block;
+    margin-left: 5px;
+    border-radius: 9999px;
   }
 
   .navLink-text {
