@@ -216,6 +216,7 @@ section h1 {
 .tweet-button-container {
   display: flex;
   justify-content: flex-end;
+  margin-top: 8px;
 }
 
 /* Posts list */
