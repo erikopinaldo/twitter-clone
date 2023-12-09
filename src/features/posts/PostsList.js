@@ -11,6 +11,8 @@ import { RetweetLabel } from './RetweetLabel';
 export const PostsList = () => {
     const posts = useSelector((state) => state.posts)
     const [currentUser] = useSelector((state) => state.currentUser)
+    const currentTimelineView = useSelector(state => state.currentTimelineView)
+    const currentUserFollowList = useSelector(state => state.users).find(user => user.id === currentUser.id).following
 
     let history = useHistory();
 
@@ -23,6 +25,11 @@ export const PostsList = () => {
         .slice()
         .sort((a, b) => b.date.localeCompare(a.date))
         .filter(post => {
+
+            // If user is in the Following view, only show tweets from themselves or the users they follow 
+            if (currentTimelineView === "Following" && currentUser.id !== post.user && !currentUserFollowList.includes(post.user)) {
+                return
+            }
             
             // Hide tweet if current user retweeted the tweet, or if the current user was the one that was retweeted 
             if (post.retweets_id) {
