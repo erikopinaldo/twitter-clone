@@ -152,6 +152,12 @@ nav section {
     width: var(--nav-width-medium);
     height: 100%;
   }
+
+  .navContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (min-width: 1300px) {
