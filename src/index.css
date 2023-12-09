@@ -38,6 +38,9 @@ p {
 .wrapper {
   margin: 0 auto;
   max-width: 1100px;
+  /*Scrollbar layout shift fix*/
+  position: relative;
+  left: calc((100vw - 100%) / 2);
 }
 
 /* Navbar */
