@@ -1,6 +1,7 @@
 :root {
   --redux-color: #764abc;
   --nav-width: 275px;
+  --nav-width-medium: 88px;
   --hover-color: rgba(15, 20, 25, 0.10);
   --border-color: 1.75px solid rgba(177, 174, 174, 0.20)
 }
@@ -127,16 +128,6 @@ nav section {
 }
 
 @media (min-width: 800px) {
-  .App {
-    margin-left: var(--nav-width);
-    max-width: 600px;
-  }
-
-  .navbar {
-    width: var(--nav-width);
-    height: 100%;
-  }
-
   nav section {
     padding: 0px 20px 0px 20px;
   }
@@ -148,6 +139,30 @@ nav section {
   .logo-wrapper {
     display: block;
     border-radius: 9999px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1299px) {
+  .App {
+      margin-left: var(--nav-width-medium);
+      max-width: 600px;
+    }
+  
+  .navbar {
+    width: var(--nav-width-medium);
+    height: 100%;
+  }
+}
+
+@media (min-width: 1300px) {
+  .App {
+    margin-left: var(--nav-width);
+    max-width: 600px;
+  }
+  
+  .navbar {
+    width: var(--nav-width);
+    height: 100%;
   }
 
   .navLink-text {
