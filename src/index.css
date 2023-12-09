@@ -2,6 +2,7 @@
   --redux-color: #764abc;
   --nav-width: 275px;
   --hover-color: rgba(15, 20, 25, 0.10);
+  --border-color: 1.75px solid rgba(177, 174, 174, 0.20)
 }
 
 body {
@@ -54,7 +55,7 @@ p {
   /* display: flex; */
   padding: 0;
   background-color: white;
-  border-top: 1px solid rgb(177, 174, 174);
+  border-top: var(--border-color);
 }
 
 .navbar a {
@@ -179,7 +180,7 @@ section h1 {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  border: 1px solid rgb(177, 174, 174);
+  border: var(--border-color);
 }
 
 @media (min-width: 800px) {
@@ -229,7 +230,7 @@ section h1 {
 
 #postContent {
   border: none;
-  border-bottom: 1px solid #dedede;
+  border-bottom: var(--border-color);
   outline: none;
   resize: none;
   box-shadow: none;
@@ -241,7 +242,7 @@ section h1 {
       display: block;
       /* margin-top: 50px; */
       padding: 0.5rem 1.5rem;
-      border: 1px solid rgb(177, 174, 174);
+      border: var(--border-color);
     }
 }
 
@@ -259,8 +260,8 @@ section h1 {
 }
 
 .posts-list {
-  border-left: 1px solid rgb(177, 174, 174);
-  border-right: 1px solid rgb(177, 174, 174);
+  border-left: var(--border-color);
+  border-right: var(--border-color);
 }
 
 .post h2 {
@@ -269,7 +270,7 @@ section h1 {
 }
 
 .post-excerpt-container {
-    border-bottom: 1px solid rgb(177, 174, 174);
+    border-bottom: var(--border-color);
 }
 
 .post-excerpt {
