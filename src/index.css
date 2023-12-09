@@ -83,6 +83,10 @@ nav section {
   margin-left: 5px;
 }
 
+.navLinks a:hover {
+  background-color: var(--hover-color);
+}
+
 .navLink-text {
   display: none;
   color: black;
