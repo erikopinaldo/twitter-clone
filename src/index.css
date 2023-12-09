@@ -158,6 +158,10 @@ nav section {
     flex-direction: column;
     align-items: center;
   }
+
+  .navLink-content {
+    justify-content: center;
+  }
 }
 
 @media (min-width: 1300px) {
