@@ -182,7 +182,7 @@ section h1 {
 .view-selector li {
   text-align: center;
   font-weight: bold;
-  padding: 0.5rem;
+  padding: 16px;
   cursor: pointer;
 }
 
