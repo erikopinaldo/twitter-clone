@@ -15,10 +15,10 @@ export const ViewSelectorItem = ({ children }) => {
     const styleOptions = currentTimelineView === children ? 'selected-view' : null
 
     return (
-        <div className='view-selector-item-container'>
-            <div
-                className='view-selector-item'
-                onClick={(e) => handleViewClick(e.target.textContent)}>
+        <div
+            onClick={(e) => handleViewClick(e.target.textContent)}
+            className='view-selector-item-container'>
+            <div className='view-selector-item'>
                 <span>
                     {children}
                 </span>
