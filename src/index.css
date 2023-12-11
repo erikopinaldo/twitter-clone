@@ -62,6 +62,8 @@ p {
   padding: 0.75rem;
 }
 
+/* Logo */
+
 .logo-wrapper {
   display: none;
 }
@@ -80,6 +82,8 @@ p {
 #logo {
   height: 2rem;
 }
+
+/* Nav items */
 
 nav section {
   width: 100%;
