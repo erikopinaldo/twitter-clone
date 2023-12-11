@@ -1,9 +1,10 @@
 import React from 'react'
+import { UserDropdown } from '../features/currentUser/UserDropdown'
 
 export const Navbar = () => {
   return (
     <nav className='navbar'>
-      <section>
+      <section className='top-nav'>
         <div className="navContent">
           <div className="navLinks">
             <div className='logo-wrapper'>
@@ -77,6 +78,7 @@ export const Navbar = () => {
           </div>
         </div>
       </section>
+      <UserDropdown />
     </nav>
   )
 }
