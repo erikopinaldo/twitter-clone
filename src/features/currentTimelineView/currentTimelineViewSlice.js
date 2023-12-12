@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = "For You"
+const initialState = "For you"
 
 const currentTimelineViewSlice = createSlice({
     name: 'currentTimelineView',

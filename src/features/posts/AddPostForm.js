@@ -35,13 +35,14 @@ export const AddPostForm = () => {
                 <textarea
                     id="postContent"
                     name="postContent"
+                    placeholder='What is happening?!'
                     value={content}
                     onChange={onContentChanged}
                     onKeyDown={handleUserKeyPress}
                 />
                 <div className='tweet-button-container'>
                     <button type="button" onClick={onSavePostClicked} disabled={!canSave}>
-                        Tweet
+                        Post
                     </button>
                 </div>
             </form>

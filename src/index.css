@@ -1,6 +1,9 @@
 :root {
   --redux-color: #764abc;
-  --nav-width: 250px;
+  --nav-width: 275px;
+  --nav-width-medium: 88px;
+  --hover-color: rgba(15, 20, 25, 0.10);
+  --border-color: 1.75px solid rgba(177, 174, 174, 0.20)
 }
 
 body {
@@ -23,22 +26,22 @@ p {
   font-size: 1.1rem;
 }
 
-/* User dropdown */
-
-.user-dropdown-container {
-  margin: 0 2rem 0 2rem;
-}
-
 /* Wrapper */
 
 .wrapper {
   margin: 0 auto;
   max-width: 1100px;
+  /*Scrollbar layout shift fix*/
+  position: relative;
+  left: calc((100vw - 100%) / 2);
 }
 
 /* Navbar */
 
 .navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   overflow: hidden;
   position: fixed;
   bottom: 0;
@@ -46,16 +49,41 @@ p {
   /* display: flex; */
   padding: 0;
   background-color: white;
-  border-top: 1px solid rgb(177, 174, 174);
+  border-top: var(--border-color);
 }
 
-.navbar a {
-  color: #f2f2f2;
-  text-align: left;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+/* User dropdown */
+
+.user-dropdown-container {
+  margin-bottom: 2rem;
 }
+
+#postAuthor {
+  padding: 0.75rem;
+}
+
+/* Logo */
+
+.logo-wrapper {
+  display: none;
+}
+
+.logo-container {
+  display: inline-block;
+  padding: 16px;
+  border-radius: 9999px;
+  line-height: 0%;
+}
+
+.logo-container:hover {
+  background-color: var(--hover-color);
+}
+
+#logo {
+  height: 2rem;
+}
+
+/* Nav items */
 
 nav section {
   width: 100%;
@@ -71,8 +99,34 @@ nav section {
   justify-content: space-around;
 }
 
-.navLinks a {
-  margin-left: 5px;
+.navLink {
+  color: #f2f2f2;
+  text-align: left;
+  font-size: 17px;
+  padding: 14px 16px;
+  border-radius: 9999px;
+}
+
+.navLink-content {
+  display: flex;
+  align-items: center;
+}
+
+.navLink a {
+  text-decoration: none;
+}
+
+.navLink:hover {
+  background-color: var(--hover-color);
+}
+
+.nav-icon-container {
+  line-height: 0%;
+}
+
+.nav-icon {
+  height: 1.75rem;
+  width: 1.75rem;
 }
 
 .navLink-text {
@@ -81,25 +135,56 @@ nav section {
 }
 
 @media (min-width: 800px) {
-  .App {
-    margin-left: var(--nav-width);
+  nav section {
+    padding: 0px 20px 0px 20px;
   }
 
+  .navLinks, .navLink {
+    display: block;
+  }
+
+  .logo-wrapper {
+    display: block;
+    border-radius: 9999px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1299px) {
+  .App {
+      margin-left: var(--nav-width-medium);
+      max-width: 600px;
+    }
+  
+  .navbar {
+    width: var(--nav-width-medium);
+    height: 100%;
+  }
+
+  .navContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navLink-content {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1300px) {
+  .App {
+    margin-left: var(--nav-width);
+    max-width: 600px;
+  }
+  
   .navbar {
     width: var(--nav-width);
     height: 100%;
   }
 
-  nav section {
-    padding: 0px 20px 0px 20px;
-  }
-
-  .navLinks, .navLinks a {
-    display: block;
-  }
-
   .navLink-text {
     display: inline-block;
+    margin-left: 20px;
     font-size: 20px;
   }
 }
@@ -156,7 +241,14 @@ section h1 {
 /* View selector */
 
 .view-selector-wrapper {
-  margin-top: 50px;
+  /* margin-top: 50px; */
+  position: sticky;
+  top: -0.5px;
+  /*Explicitly declare index to fix opacity stacking context issue since opacity is changed on the Post button*/
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: var(--border-color);
 }
 
 .view-selector {
@@ -165,7 +257,6 @@ section h1 {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  border: 1px solid rgb(177, 174, 174);
 }
 
 @media (min-width: 800px) {
@@ -174,15 +265,33 @@ section h1 {
   }
 }
 
-.view-selector li {
+.view-selector-item-container {
+  display: flex;
+  justify-content: center;
   text-align: center;
   font-weight: bold;
-  padding: 0.5rem;
+  padding: 0 16px;
   cursor: pointer;
 }
 
+.view-selector-item-container:hover {
+  background-color: var(--hover-color);
+}
+
+.view-selector-item {
+  position: relative;
+  padding: 16px 0;
+}
+
 .selected-view {
-  border-bottom: solid 2px rgb(14 165 233);
+  height: 4px;
+  min-width: 53px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  border-radius: 9999px;
+  background-color: rgb(14 165 233);
+  /* border-bottom: solid 4px rgb(14 165 233); */
 }
 
 /* Add post form */
@@ -195,18 +304,30 @@ section h1 {
   display: none;
 }
 
+#postContent {
+  border: none;
+  border-bottom: var(--border-color);
+  outline: none;
+  resize: none;
+  box-shadow: none;
+  font-size: 20px;
+}
+
 @media (min-width: 800px) {
   .add-post-form {
       display: block;
       /* margin-top: 50px; */
-      padding: 1.5rem 1.5rem;
-      border: 1px solid rgb(177, 174, 174);
+      padding: 0.5rem 1.5rem;
+      border-right: var(--border-color);
+      border-left: var(--border-color);
+      border-bottom: var(--border-color);
     }
 }
 
 .tweet-button-container {
   display: flex;
   justify-content: flex-end;
+  margin-top: 8px;
 }
 
 /* Posts list */
@@ -217,8 +338,8 @@ section h1 {
 }
 
 .posts-list {
-  border-left: 1px solid rgb(177, 174, 174);
-  border-right: 1px solid rgb(177, 174, 174);
+  border-left: var(--border-color);
+  border-right: var(--border-color);
 }
 
 .post h2 {
@@ -227,7 +348,12 @@ section h1 {
 }
 
 .post-excerpt-container {
-    border-bottom: 1px solid rgb(177, 174, 174);
+    border-bottom: var(--border-color);
+}
+
+.post-excerpt-container:hover {
+  cursor: pointer;
+  background-color: var(--hover-color);
 }
 
 .post-excerpt {
@@ -268,7 +394,9 @@ p.post-content {
 
 button:disabled,
 button:disabled:hover {
+  background: #0366ee;
   opacity: 0.5;
+  cursor: default;
 }
 
 button.reaction-button {

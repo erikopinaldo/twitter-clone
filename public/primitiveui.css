@@ -755,7 +755,7 @@ button,
   -webkit-appearance: none;
   display: inline-block;
   border: 1px solid #0366ee;
-  border-radius: 4px;
+  border-radius: 9999px;
   background: #0366ee;
   color: #ffffff;
   font-weight: 600;
@@ -882,12 +882,10 @@ a.full-button {
 select,
 textarea {
   display: block;
-  border: 1px solid #dedede;
   border-radius: 4px;
-  padding: 0.75rem;
+  padding: 12px 0 12px 0;
   outline: none;
   background: transparent;
-  margin-bottom: 0.5rem;
   font-size: 1rem;
   width: 100%;
   max-width: 100%;

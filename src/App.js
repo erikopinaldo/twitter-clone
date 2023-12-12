@@ -26,7 +26,6 @@ function App() {
               path="/"
               render={() => (
                 <React.Fragment>
-                  <UserDropdown />
                   <ViewSelector />
                   <AddPostForm />
                   <PostsList />
