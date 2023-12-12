@@ -79,6 +79,7 @@ input[type="checkbox"]:checked~.dropdown-content {
   padding: 12px 50px;
   color: #404040;
   border-radius: 9999px;
+  cursor: pointer;
 }
 
 .dropdown-btn:hover {
