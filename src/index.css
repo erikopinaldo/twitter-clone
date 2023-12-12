@@ -65,11 +65,7 @@ input[type="checkbox"] {
   position: absolute;
 }
 
-/* input[type="checkbox"]:checked~.dropdown-content {
-  visibility: visible;
-} */
-
-.dropdown-content.menu-open {
+input[type="checkbox"]:checked~.dropdown-content {
   visibility: visible;
 }
 
