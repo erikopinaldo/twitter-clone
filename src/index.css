@@ -55,7 +55,7 @@ p {
 /* User dropdown */
 
 .user-dropdown-container {
-  margin-bottom: 2rem;
+  margin-bottom: 12px;
   display: flex;
   justify-content: center;
 }
