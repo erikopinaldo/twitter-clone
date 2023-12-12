@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { currentUserSelected } from './currentUsersSlice'
-import { toggleIsMenuOpen } from '../userDropdownMenu/userDropdownMenuSlice'
 
 export const UserDropdown = () => {
     const [userId, setUserId] = useState('')
@@ -11,18 +10,14 @@ export const UserDropdown = () => {
 
     let [currentUser] = useSelector(state => state.currentUser)
     const users = useSelector(state => state.users)
-    const isMenuOpen = useSelector(state => state.userDropdownMenu.isMenuOpen)
-
-    console.log(isMenuOpen)
-
-    const toggleHandler = () => {
-        dispatch(toggleIsMenuOpen())
-    }
 
     const onUserSelected = (name) => {
+        console.log(name)
         setUserId(name)
 
         currentUser = users.filter(user => user.name === name)
+        console.log(currentUser.name)
+
         dispatch(currentUserSelected(currentUser)) 
     }
 
@@ -36,9 +31,7 @@ export const UserDropdown = () => {
     ))
 
     return (
-        <section
-            className='user-dropdown-container'
-            onClick={toggleHandler}>
+        <section className='user-dropdown-container'>
             <div className="dropdown">
                 <input type="checkbox" id="dropdown" />
                 <label htmlFor="dropdown" className="dropdown-btn">
@@ -49,7 +42,7 @@ export const UserDropdown = () => {
                         <span>{currentUser.username}</span>
                     </div>
                 </label>
-                <ul className={isMenuOpen ? "dropdown-content menu-open" : "dropdown-content"}>
+                <ul className="dropdown-content">
                     {usersOptions}
                 </ul>
             </div>
