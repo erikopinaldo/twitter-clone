@@ -56,7 +56,7 @@ p {
 
 .user-dropdown-container {
   margin-bottom: 12px;
-  display: flex;
+  display: none;
   justify-content: center;
 }
 
@@ -213,6 +213,10 @@ nav section {
   .logo-wrapper {
     display: block;
     border-radius: 9999px;
+  }
+
+  .user-dropdown-container {
+    display: flex;
   }
 
   .profile-pic {
