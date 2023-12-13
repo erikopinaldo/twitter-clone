@@ -269,6 +269,14 @@ nav section {
   .username-container {
     display: block;
   }
+
+  .dropdown {
+    display: block;
+  }
+
+  .dropdown-btn {
+    justify-content: flex-start;
+  }
 }
 
 .navLinks a .badge {
