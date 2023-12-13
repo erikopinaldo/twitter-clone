@@ -46,7 +46,6 @@ p {
   position: fixed;
   bottom: 0;
   width: 100%;
-  /* display: flex; */
   padding: 0;
   background-color: white;
   border-top: var(--border-color);
@@ -242,6 +241,10 @@ nav section {
   }
 
   .navLink-content {
+    justify-content: center;
+  }
+
+  .dropdown {
     justify-content: center;
   }
 }
