@@ -3,8 +3,15 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { currentUserSelected } from './currentUsersSlice'
 
+import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
+import "@reach/dialog/styles.css";
+// import VisuallyHidden from "@reach/visually-hidden";
+
 export const UserDropdown = () => {
     const [userId, setUserId] = useState('')
+    const [showDialog, setShowDialog] = React.useState(false);
+    const open = () => setShowDialog(true);
+    const close = () => setShowDialog(false);
 
     const dispatch = useDispatch()
 
@@ -31,21 +38,26 @@ export const UserDropdown = () => {
     ))
 
     return (
-        <section className='user-dropdown-container'>
+        <section className='user-dropdown-container' onClick={open}>
             <div className="dropdown">
-                <input type="checkbox" id="dropdown" />
-                <label htmlFor="dropdown" className="dropdown-btn">
+                <div className="dropdown-btn">
                     <div>
                         <span>{currentUser.name}</span>
                     </div>
                     <div>
                         <span>{currentUser.username}</span>
                     </div>
-                </label>
-                <ul className="dropdown-content">
+                </div>
+            </div>
+
+            <Dialog
+                id='modal'
+                isOpen={showDialog}
+                onDismiss={close}>
+                <ul className="dropdown-content" onClick={close}>
                     {usersOptions}
                 </ul>
-            </div>
+            </Dialog>
         </section>
     )
 }
