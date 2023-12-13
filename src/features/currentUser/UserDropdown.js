@@ -41,12 +41,20 @@ export const UserDropdown = () => {
         <section className='user-dropdown-container' onClick={open}>
             <div className="dropdown">
                 <div className="dropdown-btn">
-                    <div>
-                        <span>{currentUser.name}</span>
+                    <div className='profile-pic-container'>
+                        {/* <img
+                            className='profile-pic'
+                            src='https://pbs.twimg.com/profile_images/1506072421002104842/9GVCifCE_normal.jpg' /> */}
+                        <div className='profile-pic'></div>
                     </div>
-                    <div>
-                        <span>{currentUser.username}</span>
-                    </div>
+                    <div className='username-container'>
+                        <div>
+                            <span>{currentUser.name}</span>
+                        </div>
+                        <div>
+                            <span>{currentUser.username}</span>
+                        </div>
+                    </div>     
                 </div>
             </div>
 
