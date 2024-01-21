@@ -8,32 +8,44 @@ export const UserDropdown = () => {
 
     const dispatch = useDispatch()
 
-    let currentUser = useSelector(state => state.currentUser)
+    let [currentUser] = useSelector(state => state.currentUser)
     const users = useSelector(state => state.users)
 
-    const onUserSelected = (e) => {
-        setUserId(e.target.value)
+    const onUserSelected = (name) => {
+        console.log(name)
+        setUserId(name)
 
-        currentUser = users.filter(user => user.id === e.target.value)
-        console.log(currentUser)
+        currentUser = users.filter(user => user.name === name)
+        console.log(currentUser.name)
 
         dispatch(currentUserSelected(currentUser)) 
     }
 
     const usersOptions = users.map(user => (
-        <option key={user.id} value={user.id}>
+        <li
+            key={user.id}
+            value={user.id}
+            onClick={(e) => onUserSelected(e.target.textContent)}>
             {user.name}
-        </option>
+        </li>
     ))
 
     return (
         <section className='user-dropdown-container'>
-            <form>
-                <label htmlFor="postAuthor">User:</label>
-                <select id="postAuthor" value={currentUser.name} onChange={onUserSelected}>
+            <div className="dropdown">
+                <input type="checkbox" id="dropdown" />
+                <label htmlFor="dropdown" className="dropdown-btn">
+                    <div>
+                        <span>{currentUser.name}</span>
+                    </div>
+                    <div>
+                        <span>{currentUser.username}</span>
+                    </div>
+                </label>
+                <ul className="dropdown-content">
                     {usersOptions}
-                </select>
-            </form>
+                </ul>
+            </div>
         </section>
     )
 }
