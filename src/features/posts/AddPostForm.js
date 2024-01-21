@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { postAdded } from './postsSlice'
 
-export const AddPostForm = () => {
+export const AddPostForm = ({ handleCloseClick }) => {
     const [content, setContent] = useState('')
 
     const dispatch = useDispatch()
@@ -24,6 +24,7 @@ export const AddPostForm = () => {
         if (content) {
             dispatch(postAdded(content, currentUser.id))
             setContent('')
+            handleCloseClick()
         }
     }
 
