@@ -24,7 +24,9 @@ export const AddPostForm = ({ handleCloseClick }) => {
         if (content) {
             dispatch(postAdded(content, currentUser.id))
             setContent('')
-            handleCloseClick()
+            
+            // Only use modal close logic if this instance of the AddPostForm component was passed the handleCloseClick function
+            if (handleCloseClick) handleCloseClick()
         }
     }
 
