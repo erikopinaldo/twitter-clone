@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@mswjs/data": "^0.8.4",
+    "@reach/dialog": "^0.18.0",
+    "@reach/visually-hidden": "^0.18.0",
     "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
