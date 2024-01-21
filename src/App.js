@@ -27,7 +27,9 @@ function App() {
               render={() => (
                 <React.Fragment>
                   <ViewSelector />
-                  <AddPostForm />
+                  <section className='add-post-form-container'>
+                    <AddPostForm />
+                  </section>
                   <PostsList />
                 </React.Fragment>
               )}
