@@ -104,7 +104,7 @@ export const PostsList = () => {
                         </g>
                     </svg>
                 </div>
-                <AddPostForm />
+                <AddPostForm handleCloseClick={close} />
             </Dialog>
         </>
     )
