@@ -59,7 +59,7 @@ export const UserDropdown = () => {
             </div>
 
             <Dialog
-                id='modal'
+                id='profile-modal'
                 isOpen={showDialog}
                 onDismiss={close}>
                 <ul className="dropdown-content" onClick={close}>
