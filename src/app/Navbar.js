@@ -75,6 +75,11 @@ export const Navbar = () => {
                 </div>
               </a>
             </div>
+            <div className='nav-tweet-button-container'>
+              <button type='button' className='nav-tweet-button'>
+                Post
+              </button>
+            </div>
           </div>
         </div>
       </section>

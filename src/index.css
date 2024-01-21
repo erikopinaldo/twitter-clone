@@ -200,6 +200,15 @@ nav section {
   color: black;
 }
 
+.nav-tweet-button-container {
+  margin: 16px 0 16px 16px;
+}
+
+.nav-tweet-button {
+  display: block;
+  width: 90%;
+}
+
 @media (min-width: 800px) {
   nav section {
     padding: 0px 20px 0px 20px;
