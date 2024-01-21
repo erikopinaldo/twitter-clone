@@ -12,7 +12,7 @@ import { RetweetLabel } from './RetweetLabel';
 import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
 import "@reach/dialog/styles.css";
 
-export const PostsList = () => {
+export const PostsList = ( { handleTweetModalClose, handleTweetButtonOpen }) => {
     const posts = useSelector((state) => state.posts)
     const [currentUser] = useSelector((state) => state.currentUser)
     const currentTimelineView = useSelector(state => state.currentTimelineView)
@@ -89,23 +89,8 @@ export const PostsList = () => {
                 {renderedPosts}
             </section>
             <div>
-                <button id="mobile-tweet-button" onClick={open}>+</button>
+                <button id="mobile-tweet-button" onClick={() => handleTweetButtonOpen()}>+</button>
             </div>
-
-            <Dialog
-                id='compose-modal'
-                isOpen={showDialog}
-                onDismiss={close}>
-                <div className='close-modal-icon-container' onClick={close}>
-                    <svg className='close-modal-icon' viewBox="0 0 24 24">
-                        <g>
-                            <path d="M10.59 12L4.54 5.96l1.42-1.42L12 10.59l6.04-6.05 1.42 1.42L13.41 12l6.05 6.04-1.42 1.42L12 13.41l-6.04 6.05-1.42-1.42L10.59 12z">
-                            </path>
-                        </g>
-                    </svg>
-                </div>
-                <AddPostForm handleCloseClick={close} />
-            </Dialog>
         </>
     )
 }

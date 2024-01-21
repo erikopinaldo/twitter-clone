@@ -1,7 +1,7 @@
 import React from 'react'
 import { UserDropdown } from '../features/currentUser/UserDropdown'
 
-export const Navbar = () => {
+export const Navbar = ({ handleTweetButtonOpen }) => {
   return (
     <nav className='navbar'>
       <section className='top-nav'>
@@ -76,7 +76,7 @@ export const Navbar = () => {
               </a>
             </div>
             <div className='nav-tweet-button-container'>
-              <button type='button' className='nav-tweet-button'>
+              <button type='button' className='nav-tweet-button' onClick={() => handleTweetButtonOpen()}>
                 Post
               </button>
             </div>
