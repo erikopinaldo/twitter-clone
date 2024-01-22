@@ -2,23 +2,31 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { useHistory } from "react-router-dom";
 
+import { AddPostForm } from './AddPostForm'
 import { PostAuthor } from './PostAuthor'
 import { PostAuthorUsername } from './PostAuthorUsername'
 import { TweetDate } from './TweetDate'
 import { ReactionButtons } from './ReactionButtons'
 import { RetweetLabel } from './RetweetLabel';
 
-export const PostsList = () => {
+import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
+import "@reach/dialog/styles.css";
+
+export const PostsList = ( { handleTweetModalClose, handleTweetButtonOpen }) => {
     const posts = useSelector((state) => state.posts)
     const [currentUser] = useSelector((state) => state.currentUser)
     const currentTimelineView = useSelector(state => state.currentTimelineView)
     const currentUserFollowList = useSelector(state => state.users).find(user => user.id === currentUser.id).following
 
+    const [showDialog, setShowDialog] = React.useState(false);
+    const open = () => setShowDialog(true);
+    const close = () => setShowDialog(false);
+
     let history = useHistory();
 
-    const onTweetButtonClicked = () => {
-        history.push('/compose/tweet')
-    }
+    // const onTweetButtonClicked = () => {
+    //     history.push('/compose/tweet')
+    // }
 
     // Sort posts in reverse chronological order by datetime string
     const orderedPosts = posts
@@ -81,7 +89,7 @@ export const PostsList = () => {
                 {renderedPosts}
             </section>
             <div>
-                <button id="mobile-tweet-button" onClick={onTweetButtonClicked}>+</button>
+                <button id="mobile-tweet-button" onClick={() => handleTweetButtonOpen()}>+</button>
             </div>
         </>
     )

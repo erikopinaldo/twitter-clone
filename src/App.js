@@ -6,6 +6,9 @@ import {
   Redirect,
 } from 'react-router-dom'
 
+import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
+import "@reach/dialog/styles.css";
+
 import { Navbar } from './app/Navbar'
 
 import { PostsList } from './features/posts/PostsList'
@@ -15,10 +18,14 @@ import { UserDropdown } from './features/currentUser/UserDropdown'
 import { ViewSelector } from './features/currentTimelineView/ViewSelector'
 
 function App() {
+  const [showDialog, setShowDialog] = React.useState(false);
+  const open = () => setShowDialog(true);
+  const close = () => setShowDialog(false);
+
   return (
     <Router>
       <div className='wrapper'>
-        <Navbar />
+        <Navbar handleTweetButtonOpen={open} />
         <div className="App">
           <Switch>
             <Route
@@ -27,8 +34,27 @@ function App() {
               render={() => (
                 <React.Fragment>
                   <ViewSelector />
-                  <AddPostForm />
-                  <PostsList />
+                  <section className='add-post-form-container'>
+                    <AddPostForm />
+                  </section>
+                  <PostsList
+                    handleTweetModalClose={close}
+                    handleTweetButtonOpen={open} />
+
+                  <Dialog
+                    id='compose-modal'
+                    isOpen={showDialog}
+                    onDismiss={close}>
+                    <div className='close-modal-icon-container' onClick={close}>
+                      <svg className='close-modal-icon' viewBox="0 0 24 24">
+                        <g>
+                          <path d="M10.59 12L4.54 5.96l1.42-1.42L12 10.59l6.04-6.05 1.42 1.42L13.41 12l6.05 6.04-1.42 1.42L12 13.41l-6.04 6.05-1.42-1.42L10.59 12z">
+                          </path>
+                        </g>
+                      </svg>
+                    </div>
+                    <AddPostForm handleCloseClick={close} />
+                  </Dialog>
                 </React.Fragment>
               )}
             />

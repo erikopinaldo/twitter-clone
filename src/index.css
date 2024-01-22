@@ -30,7 +30,7 @@ p {
 
 .wrapper {
   margin: 0 auto;
-  max-width: 1100px;
+  max-width: 875px;
   /*Scrollbar layout shift fix*/
   position: relative;
   left: calc((100vw - 100%) / 2);
@@ -136,7 +136,7 @@ p {
 
 .logo-container {
   display: inline-block;
-  padding: 16px;
+  padding: 14px;
   border-radius: 9999px;
   line-height: 0%;
 }
@@ -146,7 +146,7 @@ p {
 }
 
 #logo {
-  height: 2rem;
+  height: 1.75rem;
 }
 
 /* Nav items */
@@ -200,6 +200,18 @@ nav section {
   color: black;
 }
 
+.nav-tweet-button-container {
+  display: none;
+}
+
+.nav-tweet-button-post {
+  display: none;
+}
+
+.nav-tweet-button-icon {
+  display: none;
+}
+
 @media (min-width: 800px) {
   nav section {
     padding: 0px 20px 0px 20px;
@@ -212,6 +224,11 @@ nav section {
   .logo-wrapper {
     display: block;
     border-radius: 9999px;
+  }
+
+  .nav-tweet-button {
+    display: block;
+    width: 100%;
   }
 
   .user-dropdown-container {
@@ -240,8 +257,36 @@ nav section {
     align-items: center;
   }
 
+  .navLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navLink {
+    padding: 14px;
+  }
+
   .navLink-content {
     justify-content: center;
+  }
+
+  .nav-tweet-button-container {
+    display: block;
+    margin-top: 14px;
+    padding: 0;
+  }
+
+  .nav-tweet-button {
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    padding: 10px;
+    fill: white;
+  }
+
+  .nav-tweet-button-icon {
+    display: inline-block;
   }
 
   .dropdown {
@@ -250,6 +295,10 @@ nav section {
 }
 
 @media (min-width: 1300px) {
+  .wrapper {
+    max-width: 1100px;
+  }
+  
   .App {
     margin-left: var(--nav-width);
     max-width: 600px;
@@ -259,11 +308,25 @@ nav section {
     width: var(--nav-width);
     height: 100%;
   }
+  
+  .logo-container {
+    padding: 16px;
+  }
 
   .navLink-text {
     display: inline-block;
     margin-left: 20px;
     font-size: 20px;
+  }
+
+  .nav-tweet-button-container {
+    display: block;
+    padding: 0;
+    margin: 16px 0;
+  }
+
+  .nav-tweet-button-post {
+    display: inline;
   }
 
   .username-container {
@@ -390,7 +453,36 @@ section h1 {
   padding: 40px;
 }
 
-.add-post-form {
+#compose-modal {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+#compose-modal > .add-post-form {
+  padding: 0 1rem;
+}
+
+.close-modal-icon-container {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 7px;
+  border-radius: 9999px;
+  line-height: 0%;
+}
+
+.close-modal-icon-container:hover {
+  cursor: pointer;
+  background-color: var(--hover-color);
+}
+
+.close-modal-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.add-post-form-container {
   display: none;
 }
 
@@ -404,14 +496,23 @@ section h1 {
 }
 
 @media (min-width: 800px) {
-  .add-post-form {
+  .add-post-form-container {
       display: block;
       /* margin-top: 50px; */
       padding: 0.5rem 1.5rem;
       border-right: var(--border-color);
       border-left: var(--border-color);
       border-bottom: var(--border-color);
-    }
+  }
+
+  #compose-modal {
+    max-width: 600px;
+    height: auto;
+    position: absolute;
+    top: 5%;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 15px rgba(101, 119, 134, 0.2), 0 0 3px 1px rgba(101, 119, 134, 0.15);
+  }
 }
 
 .tweet-button-container {
