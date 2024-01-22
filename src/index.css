@@ -273,6 +273,10 @@ nav section {
     width: var(--nav-width);
     height: 100%;
   }
+  
+  .logo-container {
+    padding: 16px;
+  }
 
   .navLink-text {
     display: inline-block;
