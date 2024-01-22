@@ -257,6 +257,16 @@ nav section {
     align-items: center;
   }
 
+  .navLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navLink {
+    padding: 14px;
+  }
+
   .navLink-content {
     justify-content: center;
   }
