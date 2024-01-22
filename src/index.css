@@ -315,6 +315,16 @@ nav section {
     font-size: 20px;
   }
 
+  .nav-tweet-button-container {
+    display: block;
+    padding: 0;
+    margin: 16px 0;
+  }
+
+  .nav-tweet-button-post {
+    display: inline;
+  }
+
   .username-container {
     display: block;
   }
