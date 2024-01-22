@@ -204,6 +204,14 @@ nav section {
   display: none;
 }
 
+.nav-tweet-button-post {
+  display: none;
+}
+
+.nav-tweet-button-icon {
+  display: none;
+}
+
 @media (min-width: 800px) {
   nav section {
     padding: 0px 20px 0px 20px;
