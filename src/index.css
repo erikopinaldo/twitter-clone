@@ -460,6 +460,10 @@ section h1 {
   padding: 0.5rem 0;
 }
 
+.modal-top-nav {
+  height: 53px;
+}
+
 #compose-modal > .add-post-form {
   padding: 0 1rem;
 }
