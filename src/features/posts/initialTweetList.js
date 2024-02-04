@@ -43,8 +43,8 @@ const initialTweetList = [
     },
     {
         id: '3',
-        content: 'More text',
-        user: '2',
+        content: 'Hello world! This is Kevin!',
+        user: '1',
         date: sub(new Date(), { minutes: 5 }).toISOString(),
         reactions: {
             heart: {
@@ -122,10 +122,10 @@ const initialTweetList = [
         }
     },
     {
-        id: '7',
-        content: 'Hello!',
-        user: '0',
-        date: sub(new Date(), { minutes: 10 }).toISOString(),
+        id: '3',
+        content: 'Hello world! This is Kevin!',
+        user: '1',
+        date: sub(new Date(), { minutes: 5 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -222,9 +222,9 @@ const initialTweetList = [
         }
     },
     {
-        id: '12',
-        content: 'More text',
-        user: '2',
+        id: '3',
+        content: 'Hello world! This is Kevin!',
+        user: '1',
         date: sub(new Date(), { minutes: 5 }).toISOString(),
         reactions: {
             heart: {
@@ -342,9 +342,9 @@ const initialTweetList = [
         }
     },
     {
-        id: '18',
-        content: 'More text',
-        user: '2',
+        id: '3',
+        content: 'Hello world! This is Kevin!',
+        user: '1',
         date: sub(new Date(), { minutes: 5 }).toISOString(),
         reactions: {
             heart: {
@@ -442,9 +442,9 @@ const initialTweetList = [
         }
     },
     {
-        id: '23',
-        content: 'More text',
-        user: '2',
+        id: '3',
+        content: 'Hello world! This is Kevin!',
+        user: '1',
         date: sub(new Date(), { minutes: 5 }).toISOString(),
         reactions: {
             heart: {
@@ -582,9 +582,9 @@ const initialTweetList = [
         }
     },
     {
-        id: '30',
-        content: 'More text',
-        user: '2',
+        id: '3',
+        content: 'Hello world! This is Kevin!',
+        user: '1',
         date: sub(new Date(), { minutes: 5 }).toISOString(),
         reactions: {
             heart: {
