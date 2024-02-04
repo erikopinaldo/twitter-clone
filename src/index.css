@@ -548,7 +548,12 @@ section h1 {
 }
 
 .post-excerpt {
+  display: flex;
   padding: 0.75rem 1rem;
+}
+
+.timeline-profile-pic-bubble {
+  margin-right: 12px;
 }
 
 .posts-list .post-excerpt + .post-excerpt {
