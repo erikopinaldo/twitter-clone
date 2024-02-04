@@ -67,17 +67,19 @@ export const PostsList = ( { handleTweetModalClose, handleTweetButtonOpen }) => 
             <div className='post-excerpt-container' key={post.id}>
                 <article className="post-excerpt">
                     <div>
-                        <RetweetLabel
-                            retweetAuthorId={post.retweets_id ? post.user : null}
-                            parentAuthorId={post.retweets_id ? renderedPost.user : null}
-                            currentUser={currentUser} />
-                        <PostAuthor userId={renderedPost.user} />
-                        <PostAuthorUsername userId={renderedPost.user} />
-                        <TweetDate timestamp={renderedPost.date} />
-                    </div>
-                    <p className="post-content">{renderedPost.content.substring(0, 100)}</p>
+                        <div>
+                            <RetweetLabel
+                                retweetAuthorId={post.retweets_id ? post.user : null}
+                                parentAuthorId={post.retweets_id ? renderedPost.user : null}
+                                currentUser={currentUser} />
+                            <PostAuthor userId={renderedPost.user} />
+                            <PostAuthorUsername userId={renderedPost.user} />
+                            <TweetDate timestamp={renderedPost.date} />
+                        </div>
+                        <p className="post-content">{renderedPost.content.substring(0, 100)}</p>
 
-                    <ReactionButtons post={renderedPost} />
+                        <ReactionButtons post={renderedPost} />
+                    </div>
                 </article>
             </div>          
         )
