@@ -5,7 +5,7 @@ const initialTweetList = [
         id: '1',
         content: 'Hello!',
         user: '0',
-        date: sub(new Date(), { minutes: 10 }).toISOString(),
+        date: sub(new Date(), { minutes: 100000 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -25,7 +25,7 @@ const initialTweetList = [
         id: '2',
         content: 'More text',
         user: '2',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 50000 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -45,7 +45,7 @@ const initialTweetList = [
         id: '3',
         content: 'Hello world! This is Kevin!',
         user: '1',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 20000 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -65,7 +65,7 @@ const initialTweetList = [
         id: '4',
         content: 'Hello!',
         user: '0',
-        date: sub(new Date(), { minutes: 10 }).toISOString(),
+        date: sub(new Date(), { minutes: 18000 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -85,7 +85,7 @@ const initialTweetList = [
         id: '5',
         content: 'More text',
         user: '2',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 15000 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -105,7 +105,7 @@ const initialTweetList = [
         id: '6',
         content: 'More text',
         user: '2',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 13000 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -125,7 +125,7 @@ const initialTweetList = [
         id: '7',
         content: 'Hello world! This is Kevin!',
         user: '1',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 12000 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -145,7 +145,7 @@ const initialTweetList = [
         id: '8',
         content: 'More text',
         user: '2',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 10000 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -165,7 +165,7 @@ const initialTweetList = [
         id: '9',
         content: 'More text',
         user: '2',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 9000 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -185,7 +185,7 @@ const initialTweetList = [
         id: '10',
         content: 'Hello!',
         user: '0',
-        date: sub(new Date(), { minutes: 10 }).toISOString(),
+        date: sub(new Date(), { minutes: 8000 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -205,7 +205,7 @@ const initialTweetList = [
         id: '11',
         content: 'More text',
         user: '2',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 7500 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -225,7 +225,7 @@ const initialTweetList = [
         id: '12',
         content: 'Hello world! This is Kevin!',
         user: '1',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 7000 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -245,7 +245,7 @@ const initialTweetList = [
         id: '13',
         content: 'Hello!',
         user: '0',
-        date: sub(new Date(), { minutes: 10 }).toISOString(),
+        date: sub(new Date(), { minutes: 6500 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -265,7 +265,7 @@ const initialTweetList = [
         id: '14',
         content: 'More text',
         user: '2',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 6000 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -285,7 +285,7 @@ const initialTweetList = [
         id: '15',
         content: 'More text',
         user: '2',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 5500 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -305,7 +305,7 @@ const initialTweetList = [
         id: '16',
         content: 'Hello!',
         user: '0',
-        date: sub(new Date(), { minutes: 10 }).toISOString(),
+        date: sub(new Date(), { minutes: 5000 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -325,7 +325,7 @@ const initialTweetList = [
         id: '17',
         content: 'More text',
         user: '2',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 4500 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -345,7 +345,7 @@ const initialTweetList = [
         id: '18',
         content: 'Hello world! This is Kevin!',
         user: '1',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 4000 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -365,7 +365,7 @@ const initialTweetList = [
         id: '19',
         content: 'Hello!',
         user: '0',
-        date: sub(new Date(), { minutes: 10 }).toISOString(),
+        date: sub(new Date(), { minutes: 3500 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -385,7 +385,7 @@ const initialTweetList = [
         id: '20',
         content: 'More text',
         user: '2',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 3000 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -405,7 +405,7 @@ const initialTweetList = [
         id: '21',
         content: 'More text',
         user: '2',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 2500 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -425,7 +425,7 @@ const initialTweetList = [
         id: '22',
         content: 'Hello!',
         user: '0',
-        date: sub(new Date(), { minutes: 10 }).toISOString(),
+        date: sub(new Date(), { minutes: 2000 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -445,7 +445,7 @@ const initialTweetList = [
         id: '23',
         content: 'Hello world! This is Kevin!',
         user: '1',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 1500 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -465,7 +465,7 @@ const initialTweetList = [
         id: '24',
         content: 'More text',
         user: '2',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 100 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -485,7 +485,7 @@ const initialTweetList = [
         id: '25',
         content: 'Hello!',
         user: '0',
-        date: sub(new Date(), { minutes: 10 }).toISOString(),
+        date: sub(new Date(), { minutes: 800 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -505,7 +505,7 @@ const initialTweetList = [
         id: '26',
         content: 'More text',
         user: '2',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 600 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -525,7 +525,7 @@ const initialTweetList = [
         id: '27',
         content: 'More text',
         user: '2',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 500 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -545,7 +545,7 @@ const initialTweetList = [
         id: '28',
         content: 'Hello!',
         user: '0',
-        date: sub(new Date(), { minutes: 10 }).toISOString(),
+        date: sub(new Date(), { minutes: 200 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
@@ -565,7 +565,7 @@ const initialTweetList = [
         id: '29',
         content: 'More text',
         user: '2',
-        date: sub(new Date(), { minutes: 5 }).toISOString(),
+        date: sub(new Date(), { minutes: 10 }).toISOString(),
         reactions: {
             heart: {
                 count: 0,
