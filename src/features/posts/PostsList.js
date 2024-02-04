@@ -8,6 +8,7 @@ import { PostAuthorUsername } from './PostAuthorUsername'
 import { TweetDate } from './TweetDate'
 import { ReactionButtons } from './ReactionButtons'
 import { RetweetLabel } from './RetweetLabel';
+import { ProfilePicBubble } from '../users/ProfilePicBubble';
 
 import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
 import "@reach/dialog/styles.css";
@@ -66,6 +67,7 @@ export const PostsList = ( { handleTweetModalClose, handleTweetButtonOpen }) => 
         return (
             <div className='post-excerpt-container' key={post.id}>
                 <article className="post-excerpt">
+                    <ProfilePicBubble />
                     <div>
                         <div>
                             <RetweetLabel
