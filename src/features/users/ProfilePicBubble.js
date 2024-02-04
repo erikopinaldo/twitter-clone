@@ -1,6 +1,10 @@
-export const ProfilePicBubble = () => {
+export const ProfilePicBubble = ({ styleOptions }) => {
+    styleOptions += ' profile-pic-container'
+
+    console.log(styleOptions)
+
     return (
-        <div className='profile-pic-container'>
+        <div className={styleOptions}>
             {/* <img
                             className='profile-pic'
                             src='https://pbs.twimg.com/profile_images/1506072421002104842/9GVCifCE_normal.jpg' /> */}
