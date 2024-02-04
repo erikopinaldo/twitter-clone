@@ -122,7 +122,7 @@ const initialTweetList = [
         }
     },
     {
-        id: '3',
+        id: '7',
         content: 'Hello world! This is Kevin!',
         user: '1',
         date: sub(new Date(), { minutes: 5 }).toISOString(),
@@ -222,7 +222,7 @@ const initialTweetList = [
         }
     },
     {
-        id: '3',
+        id: '12',
         content: 'Hello world! This is Kevin!',
         user: '1',
         date: sub(new Date(), { minutes: 5 }).toISOString(),
@@ -342,7 +342,7 @@ const initialTweetList = [
         }
     },
     {
-        id: '3',
+        id: '18',
         content: 'Hello world! This is Kevin!',
         user: '1',
         date: sub(new Date(), { minutes: 5 }).toISOString(),
@@ -442,7 +442,7 @@ const initialTweetList = [
         }
     },
     {
-        id: '3',
+        id: '23',
         content: 'Hello world! This is Kevin!',
         user: '1',
         date: sub(new Date(), { minutes: 5 }).toISOString(),
@@ -582,7 +582,7 @@ const initialTweetList = [
         }
     },
     {
-        id: '3',
+        id: '30',
         content: 'Hello world! This is Kevin!',
         user: '1',
         date: sub(new Date(), { minutes: 5 }).toISOString(),
