@@ -68,7 +68,7 @@ export const PostsList = ( { handleTweetModalClose, handleTweetButtonOpen }) => 
             <div className='post-excerpt-container' key={post.id}>
                 <article className="post-excerpt">
                     <ProfilePicBubble styleOptions='timeline-profile-pic-bubble' />
-                    <div>
+                    <div className='post-content-container'>
                         <div>
                             <RetweetLabel
                                 retweetAuthorId={post.retweets_id ? post.user : null}
