@@ -228,6 +228,7 @@ nav section {
   .nav-tweet-button {
     display: block;
     width: 100%;
+    outline: none;
   }
 
   .user-dropdown-container {
