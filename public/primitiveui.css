@@ -754,9 +754,9 @@ button,
 [type='button'] {
   -webkit-appearance: none;
   display: inline-block;
-  border: 1px solid #0366ee;
+  border: 1px solid rgb(29, 155, 240);
   border-radius: 9999px;
-  background: #0366ee;
+  background: rgb(29, 155, 240);
   color: #ffffff;
   font-weight: 600;
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica,
