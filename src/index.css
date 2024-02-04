@@ -486,6 +486,14 @@ section h1 {
   display: none;
 }
 
+.add-post-form {
+  display: flex;
+}
+
+.add-post-form-content-container {
+  width: 100%;
+}
+
 #postContent {
   border: none;
   border-bottom: var(--border-color);
