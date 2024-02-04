@@ -587,10 +587,12 @@ section h1 {
 
 p.post-content {
   margin-top: 10px;
+  margin-bottom: 0;
 }
 
 .reaction-button-list {
   display: flex;
+  margin-top: 12px;
   justify-content: space-between;
   max-width: 425px;
 }
@@ -611,15 +613,18 @@ button:disabled:hover {
   cursor: default;
 }
 
-.reaction-button, .reaction-button:hover {
+.reaction-button, .reaction-button:hover, .reaction-button.selected-reaction-button, .muted-button,
+.muted-button:active,
+.muted-button:focus {
     border: none;
 }
 
 .reaction-button {
-  padding: 5px 10px;
-  margin: 5px 6px 10px;
-  border-radius: 4px;
-  white-space: nowrap;
+  padding: 0;
+}
+
+.reaction-button > svg {
+  height: 1rem;
 }
 
 button.reaction-button.selected-reaction-button {
