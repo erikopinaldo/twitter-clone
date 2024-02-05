@@ -590,7 +590,6 @@ section h1 {
 .post-content-container {
   width: 100%;
   padding-bottom: 12px;
-  overflow-x: auto;
 }
 
 p.post-content {
