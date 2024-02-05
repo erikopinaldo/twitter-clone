@@ -124,8 +124,9 @@ export const ReactionButtons = ({ post }) => {
             >
                 <div
                     className='reaction-button-container'
-                    onClick={() =>
-                        handleReaction(post, currentUser, name)
+                    onClick={name === 'retweet' ? () => 
+                        handleRetweet(post.id, currentUser, name) :
+                        () => handleReaction(post, currentUser, name)
                     }>
                     <div className='reaction-button-hover-bubble'></div>
                     {reaction}
