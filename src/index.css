@@ -571,6 +571,7 @@ section h1 {
 
 .timeline-profile-pic-bubble {
   margin-right: 12px;
+  padding-top: 2px;
 }
 
 .posts-list .post-excerpt + .post-excerpt {
