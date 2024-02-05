@@ -617,18 +617,41 @@ button:disabled:hover {
 .muted-button:active,
 .muted-button:focus {
     border: none;
+    margin: 0;
 }
 
 .reaction-button {
+  height: 1.2rem;
   padding: 0;
 }
 
 .reaction-button > svg {
-  height: 1rem;
+  height: 1.2rem;
 }
 
 button.reaction-button.selected-reaction-button {
   background-color: lightblue;
+}
+
+.reaction-button-container {
+  display: inline-flex;
+  position: relative;
+  /* z-index: 0; */
+}
+
+.reaction-button-hover-bubble {
+  align-items: stretch;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  margin: -10px;
+  border-radius: 9999px;
+}
+
+.reaction-button-hover-bubble:hover {
+  background-color: rgba(29, 155, 240, 0.10);
 }
 
 .spinner {
