@@ -71,9 +71,6 @@ export const ReactionButtons = ({ post }) => {
                 <button
                     type="button"
                     className={buttonStyleOptions}
-                    onClick={() =>
-                        handleReaction(post, currentUser, name)
-                    }
                 >
                     {emoji}
                 </button>
@@ -84,9 +81,6 @@ export const ReactionButtons = ({ post }) => {
                 <button
                     type="button"
                     className={buttonStyleOptions}
-                    onClick={() =>
-                        handleRetweet(post.id, currentUser, name)
-                    }
                 >
                     {emoji}
                 </button>
@@ -97,9 +91,6 @@ export const ReactionButtons = ({ post }) => {
                 <button
                     type="button"
                     className={buttonStyleOptions}
-                    onClick={() =>
-                        handleReaction(post, currentUser, name)
-                    }
                 >
                     {emoji}
                 </button>
@@ -107,7 +98,13 @@ export const ReactionButtons = ({ post }) => {
         }
 
         return (
-            <div className='reaction-button-container' key={name}>
+            <div
+                className='reaction-button-container'
+                key={name}
+                onClick={() =>
+                    handleReaction(post, currentUser, name)
+                }>
+                <div className='reaction-button-hover-bubble'></div>
                 {reaction}
             </div>
         )
