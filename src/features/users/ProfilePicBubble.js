@@ -1,8 +1,6 @@
 export const ProfilePicBubble = ({ styleOptions }) => {
     styleOptions += ' profile-pic-container'
 
-    console.log(styleOptions)
-
     return (
         <div className={styleOptions}>
             {/* <img
