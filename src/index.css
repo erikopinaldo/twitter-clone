@@ -629,8 +629,16 @@ button:disabled:hover {
   height: 1.2rem;
 }
 
-button.reaction-button.selected-reaction-button {
-  background-color: lightblue;
+/* button.reaction-button.selected-reaction-button > svg{
+  fill: rgb(249, 24, 128);
+} */
+
+.selected-reaction-button.heart > svg {
+  fill: rgb(249, 24, 128);
+}
+
+.selected-reaction-button.retweet > svg {
+  fill: rgb(0, 186, 124);
 }
 
 .reaction-button-container {
