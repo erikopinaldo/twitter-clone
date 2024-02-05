@@ -534,6 +534,10 @@ section h1 {
   margin-top: 8px;
 }
 
+.tweet-button-container span {
+  font-size: 15px;
+}
+
 /* Posts list */
 
 .text-muted {
