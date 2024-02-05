@@ -118,10 +118,12 @@ export const ReactionButtons = ({ post }) => {
         }
 
         return (
-            <div className='reaction-button-list-items'>
+            <div
+                className='reaction-button-list-item'
+                key={name}
+            >
                 <div
                     className='reaction-button-container'
-                    key={name}
                     onClick={() =>
                         handleReaction(post, currentUser, name)
                     }>

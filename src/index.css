@@ -599,7 +599,7 @@ p.post-content {
   max-width: 425px;
 }
 
-.reaction-button-list-items {
+.reaction-button-list-item {
   display: flex;
   align-items: center;
 }
