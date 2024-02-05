@@ -597,6 +597,24 @@ p.post-content {
   max-width: 425px;
 }
 
+.reaction-button-list-items {
+  display: flex;
+  align-items: center;
+}
+
+.count-container {
+  display: inline-flex;
+}
+
+.count {
+  font-size: 13px;
+  padding: 0 4px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
 .button {
   display: inline-block;
   background: #1976d2;
@@ -657,6 +675,7 @@ button:disabled:hover {
   left: 0px;
   margin: -10px;
   border-radius: 9999px;
+  z-index: 0;
 }
 
 .reaction-button-hover-bubble:hover {

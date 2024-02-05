@@ -68,7 +68,9 @@ export const ReactionButtons = ({ post }) => {
         let reaction
         let heart
         let buttonStyleOptions
+        let countStyleOptions = 'count'
 
+        // If current user has liked the tweet, the heart emoji is filled. Else, the heart emoji is not filled
         if (post.reactions[name].users.includes(currentUser.id)) {
             buttonStyleOptions = "muted-button reaction-button selected-reaction-button"
 
@@ -80,6 +82,10 @@ export const ReactionButtons = ({ post }) => {
             heart = emoji.unselected
         }
 
+        // If the reaction has a count of more than 0, show the count. Else, hide the count
+        if (!post.reactions[name].count) countStyleOptions += ' hidden'
+
+        // Handle display of all available reactions
         if (name === 'heart') {
             reaction = (
                 <button
@@ -112,14 +118,19 @@ export const ReactionButtons = ({ post }) => {
         }
 
         return (
-            <div
-                className='reaction-button-container'
-                key={name}
-                onClick={() =>
-                    handleReaction(post, currentUser, name)
-                }>
-                <div className='reaction-button-hover-bubble'></div>
-                {reaction}
+            <div className='reaction-button-list-items'>
+                <div
+                    className='reaction-button-container'
+                    key={name}
+                    onClick={() =>
+                        handleReaction(post, currentUser, name)
+                    }>
+                    <div className='reaction-button-hover-bubble'></div>
+                    {reaction}
+                </div>
+                <div className='count-container'>
+                    <span className={countStyleOptions}>{post.reactions[name].count}</span>
+                </div>
             </div>
         )
     })
