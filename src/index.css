@@ -623,9 +623,10 @@ button:disabled:hover {
 .reaction-button {
   height: 1.2rem;
   padding: 0;
+  display: flex;
 }
 
-.reaction-button > svg {
+.reaction-button svg {
   height: 1.2rem;
 }
 
@@ -633,11 +634,11 @@ button:disabled:hover {
   fill: rgb(249, 24, 128);
 } */
 
-.selected-reaction-button.heart > svg {
+.selected-reaction-button.heart svg {
   fill: rgb(249, 24, 128);
 }
 
-.selected-reaction-button.retweet > svg {
+.selected-reaction-button.retweet svg {
   fill: rgb(0, 186, 124);
 }
 
