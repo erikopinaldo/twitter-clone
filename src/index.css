@@ -49,6 +49,7 @@ p {
   padding: 0;
   background-color: white;
   border-top: var(--border-color);
+  z-index: 1;
 }
 
 /* User dropdown */
@@ -83,7 +84,6 @@ p {
   background-image: url(https://pbs.twimg.com/profile_images/1506072421002104842/9GVCifCE_normal.jpg);
   width: 42px;
   height: 42px;
-  display: none;
   border-radius: 9999px;
   background-position: center;
 }
@@ -229,6 +229,7 @@ nav section {
   .nav-tweet-button {
     display: block;
     width: 100%;
+    outline: none;
   }
 
   .user-dropdown-container {
@@ -460,6 +461,10 @@ section h1 {
   padding: 0.5rem 0;
 }
 
+.modal-top-nav {
+  height: 53px;
+}
+
 #compose-modal > .add-post-form {
   padding: 0 1rem;
 }
@@ -486,6 +491,14 @@ section h1 {
   display: none;
 }
 
+.add-post-form {
+  display: flex;
+}
+
+.add-post-form-content-container {
+  width: 100%;
+}
+
 #postContent {
   border: none;
   border-bottom: var(--border-color);
@@ -499,7 +512,7 @@ section h1 {
   .add-post-form-container {
       display: block;
       /* margin-top: 50px; */
-      padding: 0.5rem 1.5rem;
+      padding: 1.5rem 1rem 0.5rem 1rem;
       border-right: var(--border-color);
       border-left: var(--border-color);
       border-bottom: var(--border-color);
@@ -519,6 +532,10 @@ section h1 {
   display: flex;
   justify-content: flex-end;
   margin-top: 8px;
+}
+
+.tweet-button-container span {
+  font-size: 15px;
 }
 
 /* Posts list */
@@ -548,7 +565,13 @@ section h1 {
 }
 
 .post-excerpt {
+  display: flex;
   padding: 0.75rem 1rem;
+}
+
+.timeline-profile-pic-bubble {
+  margin-right: 12px;
+  padding-top: 2px;
 }
 
 .posts-list .post-excerpt + .post-excerpt {
@@ -564,14 +587,41 @@ section h1 {
   font-size: 1.5rem;
 }
 
+.post-content-container {
+  width: 100%;
+  padding-bottom: 12px;
+}
+
 p.post-content {
-  margin-top: 10px;
+  margin-bottom: 0;
 }
 
 .reaction-button-list {
+  margin-top: 12px;
   display: flex;
   justify-content: space-between;
-  max-width: 425px;
+  column-gap: 5rem;
+  max-width: 600px;
+}
+
+.reaction-button-list-item {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.count-container {
+  display: inline-flex;
+  padding-bottom: 1px;
+}
+
+.count {
+  font-size: 13px;
+  padding: 0 4px;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 .button {
@@ -585,21 +635,59 @@ p.post-content {
 
 button:disabled,
 button:disabled:hover {
-  background: #0366ee;
   opacity: 0.5;
   cursor: default;
 }
 
-button.reaction-button {
-  border: 1px solid #e0e3e9;
-  padding: 5px 10px;
-  margin: 5px 6px 10px;
-  border-radius: 4px;
-  white-space: nowrap;
+.reaction-button, .reaction-button:hover, .reaction-button.selected-reaction-button, .muted-button,
+.muted-button:active,
+.muted-button:focus {
+    border: none;
+    margin: 0;
 }
 
-button.reaction-button.selected-reaction-button {
-  background-color: lightblue;
+.reaction-button {
+  height: 1.2rem;
+  padding: 0;
+  display: flex;
+}
+
+.reaction-button svg {
+  height: 1.2rem;
+}
+
+/* button.reaction-button.selected-reaction-button > svg{
+  fill: rgb(249, 24, 128);
+} */
+
+.selected-reaction-button.heart svg {
+  fill: rgb(249, 24, 128);
+}
+
+.selected-reaction-button.retweet svg {
+  fill: rgb(0, 186, 124);
+}
+
+.reaction-button-container {
+  display: inline-flex;
+  position: relative;
+  /* z-index: 0; */
+}
+
+.reaction-button-hover-bubble {
+  align-items: stretch;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  margin: -10px;
+  border-radius: 9999px;
+  z-index: 0;
+}
+
+.reaction-button-hover-bubble:hover {
+  background-color: rgba(29, 155, 240, 0.10);
 }
 
 .spinner {

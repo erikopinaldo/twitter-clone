@@ -8,6 +8,7 @@ import { PostAuthorUsername } from './PostAuthorUsername'
 import { TweetDate } from './TweetDate'
 import { ReactionButtons } from './ReactionButtons'
 import { RetweetLabel } from './RetweetLabel';
+import { ProfilePicBubble } from '../users/ProfilePicBubble';
 
 import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
 import "@reach/dialog/styles.css";
@@ -66,18 +67,21 @@ export const PostsList = ( { handleTweetModalClose, handleTweetButtonOpen }) => 
         return (
             <div className='post-excerpt-container' key={post.id}>
                 <article className="post-excerpt">
-                    <div>
-                        <RetweetLabel
-                            retweetAuthorId={post.retweets_id ? post.user : null}
-                            parentAuthorId={post.retweets_id ? renderedPost.user : null}
-                            currentUser={currentUser} />
-                        <PostAuthor userId={renderedPost.user} />
-                        <PostAuthorUsername userId={renderedPost.user} />
-                        <TweetDate timestamp={renderedPost.date} />
-                    </div>
-                    <p className="post-content">{renderedPost.content.substring(0, 100)}</p>
+                    <ProfilePicBubble styleOptions='timeline-profile-pic-bubble' />
+                    <div className='post-content-container'>
+                        <div>
+                            <RetweetLabel
+                                retweetAuthorId={post.retweets_id ? post.user : null}
+                                parentAuthorId={post.retweets_id ? renderedPost.user : null}
+                                currentUser={currentUser} />
+                            <PostAuthor userId={renderedPost.user} />
+                            <PostAuthorUsername userId={renderedPost.user} />
+                            <TweetDate timestamp={renderedPost.date} />
+                        </div>
+                        <p className="post-content">{renderedPost.content.substring(0, 100)}</p>
 
-                    <ReactionButtons post={renderedPost} />
+                        <ReactionButtons post={renderedPost} />
+                    </div>
                 </article>
             </div>          
         )

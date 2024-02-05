@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { currentUserSelected } from './currentUsersSlice'
+import { ProfilePicBubble } from '../users/ProfilePicBubble.js'
 
 import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
 import "@reach/dialog/styles.css";
@@ -41,12 +42,7 @@ export const UserDropdown = () => {
         <section className='user-dropdown-container' onClick={open}>
             <div className="dropdown">
                 <div className="dropdown-btn">
-                    <div className='profile-pic-container'>
-                        {/* <img
-                            className='profile-pic'
-                            src='https://pbs.twimg.com/profile_images/1506072421002104842/9GVCifCE_normal.jpg' /> */}
-                        <div className='profile-pic'></div>
-                    </div>
+                    <ProfilePicBubble />
                     <div className='username-container'>
                         <div>
                             <span>{currentUser.name}</span>
