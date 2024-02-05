@@ -597,15 +597,17 @@ p.post-content {
 }
 
 .reaction-button-list {
-  display: flex;
   margin-top: 12px;
+  display: flex;
   justify-content: space-between;
-  max-width: 425px;
+  column-gap: 5rem;
+  max-width: 600px;
 }
 
 .reaction-button-list-item {
   display: flex;
   align-items: center;
+  flex: 1;
 }
 
 .count-container {
