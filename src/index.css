@@ -779,6 +779,7 @@ button:disabled:hover {
   font-size: inherit;
   background-color: rgb(15, 20, 25);
   border: none;
+  margin-bottom: 0px;
 }
 
 .subscribe-button:hover {
