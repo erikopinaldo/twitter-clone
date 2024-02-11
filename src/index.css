@@ -77,7 +77,6 @@ p {
   padding: 12px;
   display: flex;
   align-items: center;
-  justify-content: center;
   color: #404040;
   border-radius: 9999px;
   cursor: pointer;
@@ -97,6 +96,9 @@ p {
 
 .username-container {
   margin: 0 12px;
+}
+
+.sidebar-username-container {
   display: none;
 }
 
@@ -815,6 +817,10 @@ h2 {
   font-size: 20px;
   font-weight: 800;
   line-height: 20px;
+}
+
+.who-to-follow-item {
+  border-radius: 0px;
 }
 
 @media (min-width: 1040px) {
