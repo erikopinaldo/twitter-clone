@@ -837,6 +837,7 @@ h2 {
 
 .who-to-follow-container:hover {
   background-color: var(--hover-color);
+  cursor: pointer;
 }
 
 .who-to-follow-item {
