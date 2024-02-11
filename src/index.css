@@ -709,14 +709,16 @@ button:disabled:hover {
 }
 
 .search-card-container {
-  border-radius: 9999px;
   top: 0;
-  margin-top: 5px;
+  /* padding-top: 5px; */
+  align-items: center;
   z-index: 2;
+  background-color: white;
 }
 
 .search-bar {
   height: 43.2px;
+  flex-grow: 1;
   padding: 12px;
   border-radius: 9999px;
   background-color: rgba(239, 243, 244, 1.00);
@@ -812,9 +814,9 @@ h2 {
   }
 
   .search-card-container {
-    display: block;
+    display: flex;
     position: fixed;
-    height: 53px;
+    height: 60px;
   }
 
   .subscribe-card-container {
