@@ -748,7 +748,7 @@ button:disabled:hover {
 
 .sticky-right-pane-wrapper {
   position: sticky;
-  bottom: -100px;
+  top: -300px;
   line-height: 20px;
 }
 
@@ -775,6 +775,7 @@ button:disabled:hover {
 }
 
 .subscribe-button {
+  font-size: inherit;
   background-color: rgb(15, 20, 25);
   border: none;
 }
@@ -829,6 +830,10 @@ h2 {
 
 .who-to-follow-item {
   border-radius: 0px;
+}
+
+.who-to-follow-button-container {
+  font-size: 14px;
 }
 
 @media (min-width: 1040px) {

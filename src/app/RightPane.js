@@ -14,7 +14,7 @@ export const RightPane = () => {
                     user={user}
                     key={user.id}
                     containerStyleOptions='who-to-follow-item' />
-                <div className='subscribe-button-container'>
+                <div className='who-to-follow-button-container'>
                     <button type='button' className='subscribe-button'>Follow</button>
                 </div>
             </div>  
