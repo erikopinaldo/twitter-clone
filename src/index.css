@@ -737,16 +737,17 @@ button:disabled:hover {
   line-height: 20px;
 }
 
-.subscribe-card-container {
+.trending-container-item {
   background-color: rgba(247, 249, 249, 1.00);
   border-radius: 16px;
+  margin-bottom: 16px;
+  padding: 12px 16px;
 }
 
 .subscribe-card {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 12px 16px;
 }
 
 .subscribe-text {
@@ -766,6 +767,41 @@ button:disabled:hover {
 .subscribe-button:hover {
   background-color: rgba(39, 44, 48, 1.00);
   border: none;
+}
+
+.trending-card-container {
+  background-color: rgba(247, 249, 249, 1.00);
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+.trending-card-item {
+  padding: 12px 16px;
+}
+
+.trending-card-item-headline {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 2px 0px;
+}
+
+.trending-card-item-subheading-container {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  align-items: center;
+  font-size: 13px;
+}
+
+.subheading-spacer {
+  padding: 0px 4px;
+}
+
+h2 {
+  margin: 0px;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 20px;
 }
 
 @media (min-width: 1040px) {
