@@ -748,7 +748,7 @@ button:disabled:hover {
 
 .sticky-right-pane-wrapper {
   position: sticky;
-  top: -300px;
+  top: -500px;
   line-height: 20px;
 }
 
@@ -828,8 +828,16 @@ h2 {
   font-size: 14px;
 }
 
+.who-to-follow-container:hover {
+  background-color: var(--hover-color);
+}
+
 .who-to-follow-item {
   border-radius: 0px;
+}
+
+.who-to-follow-item:hover {
+  background-color: transparent;
 }
 
 .who-to-follow-button-container {
