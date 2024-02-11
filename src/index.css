@@ -816,6 +816,11 @@ button:disabled:hover {
   font-size: 13px;
 }
 
+.whats-happening-container:hover {
+  background-color: rgba(247, 249, 249, 1.00);
+  cursor: default;
+}
+
 .subheading-spacer {
   padding: 0px 4px;
 }
