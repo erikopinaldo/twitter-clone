@@ -774,7 +774,8 @@ button:disabled:hover {
   font-size: 15px;
 }
 
-.subscribe-button {
+.subscribe-button, .subscribe-button:active,
+.subscribe-button:focus {
   font-size: inherit;
   background-color: rgb(15, 20, 25);
   border: none;
