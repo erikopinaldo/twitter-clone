@@ -748,7 +748,7 @@ button:disabled:hover {
 
 .sticky-right-pane-wrapper {
   position: sticky;
-  top: -100px;
+  bottom: -100px;
   line-height: 20px;
 }
 
@@ -824,6 +824,7 @@ h2 {
   justify-content: space-between;
   align-items: center;
   padding-right: 12px;
+  font-size: 14px;
 }
 
 .who-to-follow-item {
