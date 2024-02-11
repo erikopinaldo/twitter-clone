@@ -733,9 +733,9 @@ button:disabled:hover {
   height: 53px;
 }
 
-.trending-container {
+.sticky-right-pane-wrapper {
   position: sticky;
-  bottom: -130.133px;
+  top: -100px;
   line-height: 20px;
 }
 
