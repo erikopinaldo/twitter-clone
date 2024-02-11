@@ -718,15 +718,26 @@ button:disabled:hover {
 
 .search-bar {
   height: 43.2px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
   flex-grow: 1;
-  padding: 12px;
+  /* padding: 12px; */
   border-radius: 9999px;
   background-color: rgba(239, 243, 244, 1.00);
 }
 
-.search-bar > input {
-  padding: 0px;
+.search-icon {
+  height: 1.25em;
+  padding-left: 16px;
+  vertical-align: text-bottom;
+}
+
+.search-bar > input, .search-bar > input:hover, .search-bar > input:active, .search-bar > input:focus {
+  padding: 12px;
   border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .trending-container-spacer {
