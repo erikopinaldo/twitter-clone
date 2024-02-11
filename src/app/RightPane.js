@@ -1,6 +1,21 @@
 import React from 'react'
 
+import { UserSelectBubble } from '../features/users/UserSelectBubble'
+
+import { useSelector } from 'react-redux'
+
 export const RightPane = () => {
+    const users = useSelector(state => state.users)
+
+    const userList = users.map((user) => {
+        return (
+            <UserSelectBubble
+                user={user}
+                key={user.id}
+                containerStyleOptions='who-to-follow-item' />
+        )
+    })
+
     return (
         <div className='right-pane-container'>
             <div className='sticky-right-pane-wrapper'>
@@ -135,6 +150,12 @@ export const RightPane = () => {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className='trending-card-container'>
+                        <div className='whats-happening-container trending-card-item'>
+                            <h2>Who to follow</h2>
+                        </div>
+                        {userList}
                     </div>
                     <div className='who-to-follow-card-container'></div>
                 </div>
