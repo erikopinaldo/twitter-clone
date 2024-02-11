@@ -819,6 +819,13 @@ h2 {
   line-height: 20px;
 }
 
+.who-to-follow-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 12px;
+}
+
 .who-to-follow-item {
   border-radius: 0px;
 }
