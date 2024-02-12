@@ -638,6 +638,8 @@ span:has( + .selected-view ) {
 
 p.post-content {
   margin-bottom: 0;
+  font-size: 15px;
+  line-height: 20px;
 }
 
 .reaction-button-list {
