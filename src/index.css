@@ -859,6 +859,10 @@ button:disabled:hover {
   font-size: 13px;
 }
 
+.trending-card-item-subheading-item {
+  color: rgb(83, 100, 113);
+}
+
 .trending-header-container:hover {
   border-radius: 16px;
   background-color: rgba(247, 249, 249, 1.00);
