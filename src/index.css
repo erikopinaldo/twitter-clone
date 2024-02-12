@@ -481,6 +481,7 @@ section h1 {
 
 span:has( + .selected-view ) {
   color: rgb(15, 20, 25);
+  font-weight: 700;
 }
 
 /* Add post form */
