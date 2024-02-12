@@ -450,7 +450,7 @@ section h1 {
   display: flex;
   justify-content: center;
   text-align: center;
-  font-weight: bold;
+  font-weight: 500;
   padding: 0 16px;
   cursor: pointer;
 }
