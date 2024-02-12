@@ -214,6 +214,10 @@ nav section {
   display: none;
 }
 
+.nav-tweet-button:hover {
+  background-color: rgb(26, 140, 216);
+}
+
 .nav-tweet-button-post {
   display: none;
 }
@@ -551,6 +555,14 @@ section h1 {
 
 .tweet-button-container span {
   font-size: 15px;
+}
+
+.tweet-button:hover {
+  background-color: rgb(26, 140, 216);
+}
+
+.tweet-button:disabled {
+  background-color: rgb(29, 155, 240);
 }
 
 /* Posts list */

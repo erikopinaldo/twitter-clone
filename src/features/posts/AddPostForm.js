@@ -48,7 +48,10 @@ export const AddPostForm = ({ handleCloseClick }) => {
                         onKeyDown={handleUserKeyPress}
                     />
                     <div className='tweet-button-container'>
-                        <button type="button" onClick={onSavePostClicked} disabled={!canSave}>
+                        <button
+                            type="button"
+                            className='tweet-button'
+                            onClick={onSavePostClicked} disabled={!canSave}>
                             <span>Post</span>
                         </button>
                     </div>
