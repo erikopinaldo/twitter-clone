@@ -642,6 +642,8 @@ p.post-content {
   display: flex;
   align-items: center;
   flex: 1;
+  color: rgb(83, 100, 113);
+  fill: rgb(83, 100, 113);
 }
 
 .count-container {
