@@ -33,9 +33,9 @@ p {
   max-width: 1038px;
   /*Scrollbar layout shift fix*/
   position: relative;
-  left: calc((100vw - 100%) / 2);
+  /* left: calc((100vw - 100%) / 2); */
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
 }
 
 .main-container {
@@ -227,6 +227,14 @@ nav section {
 }
 
 @media (min-width: 800px) {
+  .main-container {
+    width: unset;
+  }
+
+  .App {
+    width: 600px;
+  }
+
   nav section {
     padding: 0px 20px 0px 20px;
   }
@@ -257,7 +265,6 @@ nav section {
 
 .App {
   flex-grow: 1;
-  width: 100%;
 }
 
 @media (min-width: 800px) and (max-width: 1299px) {
@@ -892,7 +899,6 @@ h2 {
   .right-pane-container {
     display: block;
     margin-left: 30px;
-    margin-right: 50px;
     padding-top: 12px;
   }
 
