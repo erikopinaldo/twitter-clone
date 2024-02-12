@@ -634,10 +634,14 @@ span:has( + .selected-view ) {
 .post-content-container {
   width: 100%;
   padding-bottom: 12px;
+  font-size: 15px;
+  line-height: 20px;
 }
 
 p.post-content {
   margin-bottom: 0;
+  font-size: 15px;
+  line-height: 20px;
 }
 
 .reaction-button-list {

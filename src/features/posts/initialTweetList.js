@@ -4,7 +4,7 @@ const initialTweetList = [
     
     {
         id: '3',
-        content: 'Hello world! This is Kevin!',
+        content: "Just finished a deep dive into the latest JavaScript framework. Excited to implement what I've learned into our projects! #JavaScript #webdevelopment",
         user: '1',
         date: sub(new Date(), { minutes: 20000 }).toISOString(),
         reactions: {
@@ -24,7 +24,7 @@ const initialTweetList = [
     },
     {
         id: '4',
-        content: 'Hello!',
+        content: "Reflecting on the power of collaboration in tech. When we come together, we can achieve amazing things. #collaboration #techcommunity",
         user: '0',
         date: sub(new Date(), { minutes: 18000 }).toISOString(),
         reactions: {
@@ -44,7 +44,7 @@ const initialTweetList = [
     },
     {
         id: '5',
-        content: 'More text',
+        content: "Attended a fascinating webinar on AI ethics today. It's crucial to consider the implications of our technology on society. #AIethics #techforgood",
         user: '2',
         date: sub(new Date(), { minutes: 15000 }).toISOString(),
         reactions: {
@@ -64,7 +64,7 @@ const initialTweetList = [
     },
     {
         id: '6',
-        content: 'More text',
+        content: "Taking a break from coding to enjoy some quality time with family. Remembering to prioritize what matters most. #familytime #worklifebalance",
         user: '2',
         date: sub(new Date(), { minutes: 13000 }).toISOString(),
         reactions: {
@@ -84,7 +84,7 @@ const initialTweetList = [
     },
     {
         id: '7',
-        content: 'Hello world! This is Kevin!',
+        content: "Started experimenting with containerization for our application deployment. Exciting times ahead! #containerization #DevOps",
         user: '1',
         date: sub(new Date(), { minutes: 12000 }).toISOString(),
         reactions: {
@@ -104,7 +104,7 @@ const initialTweetList = [
     },
     {
         id: '8',
-        content: 'More text',
+        content: "Just published a new blog post sharing insights from our latest project. Check it out and let me know your thoughts! #blogging #techinsights",
         user: '2',
         date: sub(new Date(), { minutes: 10000 }).toISOString(),
         reactions: {
@@ -124,7 +124,7 @@ const initialTweetList = [
     },
     {
         id: '9',
-        content: 'More text',
+        content: "Celebrating a successful product launch with the team today! Hard work pays off. #productlaunch #teamwork",
         user: '2',
         date: sub(new Date(), { minutes: 9000 }).toISOString(),
         reactions: {
@@ -144,7 +144,7 @@ const initialTweetList = [
     },
     {
         id: '10',
-        content: 'Hello!',
+        content: "Enjoying the challenge of optimizing our app's performance. Every optimization brings us closer to excellence. #performanceoptimization #appdevelopment",
         user: '0',
         date: sub(new Date(), { minutes: 8000 }).toISOString(),
         reactions: {
@@ -164,7 +164,7 @@ const initialTweetList = [
     },
     {
         id: '11',
-        content: 'More text',
+        content: "Attended a virtual conference on cybersecurity best practices. Security is everyone's responsibility. #cybersecurity #securityawareness",
         user: '2',
         date: sub(new Date(), { minutes: 7500 }).toISOString(),
         reactions: {
@@ -184,7 +184,7 @@ const initialTweetList = [
     },
     {
         id: '12',
-        content: 'Hello world! This is Kevin!',
+        content: "Reflecting on the importance of accessibility in tech. Let's build inclusive products for all users. #accessibility #techforgood",
         user: '1',
         date: sub(new Date(), { minutes: 7000 }).toISOString(),
         reactions: {
@@ -204,7 +204,7 @@ const initialTweetList = [
     },
     {
         id: '13',
-        content: 'Hello!',
+        content: "Just finished a coding marathon fueled by coffee and determination. Feels good to make progress! #codingmarathon #caffeinepowered",
         user: '0',
         date: sub(new Date(), { minutes: 6500 }).toISOString(),
         reactions: {
@@ -224,7 +224,7 @@ const initialTweetList = [
     },
     {
         id: '14',
-        content: 'More text',
+        content: "Just finished a coding marathon fueled by coffee and determination. Feels good to make progress! #codingmarathon #caffeinepowered",
         user: '2',
         date: sub(new Date(), { minutes: 6000 }).toISOString(),
         reactions: {
@@ -244,7 +244,7 @@ const initialTweetList = [
     },
     {
         id: '15',
-        content: 'More text',
+        content: "Taking a moment to appreciate the beauty of clean code. It's like poetry in motion. #cleancode #codingart",
         user: '2',
         date: sub(new Date(), { minutes: 5500 }).toISOString(),
         reactions: {
@@ -264,7 +264,7 @@ const initialTweetList = [
     },
     {
         id: '16',
-        content: 'Hello!',
+        content: "Excited to mentor a new intern joining our team this summer. Paying it forward in the tech community. #mentorship #techcommunity",
         user: '0',
         date: sub(new Date(), { minutes: 5000 }).toISOString(),
         reactions: {
@@ -284,7 +284,7 @@ const initialTweetList = [
     },
     {
         id: '17',
-        content: 'More text',
+        content: "Just upgraded our server infrastructure to handle increased traffic. Ready to scale for growth! #serverupgrade #scalability",
         user: '2',
         date: sub(new Date(), { minutes: 4500 }).toISOString(),
         reactions: {
@@ -304,7 +304,7 @@ const initialTweetList = [
     },
     {
         id: '18',
-        content: 'Hello world! This is Kevin!',
+        content: "Reflecting on the importance of continuous learning in tech. There's always something new to discover. #continuouslearning #techskills",
         user: '1',
         date: sub(new Date(), { minutes: 4000 }).toISOString(),
         reactions: {
@@ -324,7 +324,7 @@ const initialTweetList = [
     },
     {
         id: '19',
-        content: 'Hello!',
+        content: "Celebrating diversity in tech today and every day. Our differences make us stronger. #diversityintech #inclusion",
         user: '0',
         date: sub(new Date(), { minutes: 3500 }).toISOString(),
         reactions: {
@@ -344,7 +344,7 @@ const initialTweetList = [
     },
     {
         id: '20',
-        content: 'More text',
+        content: "Started using a new project management tool to streamline our workflows. Efficiency is key! #projectmanagement #productivity",
         user: '2',
         date: sub(new Date(), { minutes: 3000 }).toISOString(),
         reactions: {
@@ -364,7 +364,7 @@ const initialTweetList = [
     },
     {
         id: '21',
-        content: 'More text',
+        content: "Just finished a code review session with the team. Collaboration breeds excellence. #codereview #teamwork",
         user: '2',
         date: sub(new Date(), { minutes: 2500 }).toISOString(),
         reactions: {
@@ -384,7 +384,7 @@ const initialTweetList = [
     },
     {
         id: '22',
-        content: 'Hello!',
+        content: "Attended an inspiring tech meetup last night. Grateful for the connections made and knowledge shared. #techmeetup #networking",
         user: '0',
         date: sub(new Date(), { minutes: 2000 }).toISOString(),
         reactions: {
@@ -404,7 +404,7 @@ const initialTweetList = [
     },
     {
         id: '23',
-        content: 'Hello world! This is Kevin!',
+        content: "Reflecting on the evolution of technology and its impact on our lives. It's a remarkable journey. #technology #innovation",
         user: '1',
         date: sub(new Date(), { minutes: 1500 }).toISOString(),
         reactions: {
@@ -424,7 +424,7 @@ const initialTweetList = [
     },
     {
         id: '24',
-        content: 'More text',
+        content: "Celebrating the completion of a challenging project milestone. Persistence pays off! #projectmilestone #achievementunlocked",
         user: '2',
         date: sub(new Date(), { minutes: 100 }).toISOString(),
         reactions: {
@@ -444,7 +444,7 @@ const initialTweetList = [
     },
     {
         id: '25',
-        content: 'Hello!',
+        content: "Enjoying some downtime with a good book on software design patterns. Always room for learning. #codingbook #designpatterns",
         user: '0',
         date: sub(new Date(), { minutes: 800 }).toISOString(),
         reactions: {
@@ -464,7 +464,7 @@ const initialTweetList = [
     },
     {
         id: '26',
-        content: 'More text',
+        content: "Just deployed a new feature based on user feedback. Customer satisfaction is our top priority. #userfeedback #customersuccess",
         user: '2',
         date: sub(new Date(), { minutes: 600 }).toISOString(),
         reactions: {
@@ -484,7 +484,7 @@ const initialTweetList = [
     },
     {
         id: '27',
-        content: 'More text',
+        content: "Thrilled to announce our team's contribution to an open-source project. Giving back to the community. #opensource #community",
         user: '2',
         date: sub(new Date(), { minutes: 500 }).toISOString(),
         reactions: {
@@ -504,7 +504,7 @@ const initialTweetList = [
     },
     {
         id: '28',
-        content: 'Hello!',
+        content: "Taking a moment to appreciate the supportive tech community. We're all in this together. #techcommunity #support",
         user: '0',
         date: sub(new Date(), { minutes: 200 }).toISOString(),
         reactions: {
@@ -524,7 +524,7 @@ const initialTweetList = [
     },
     {
         id: '29',
-        content: 'More text',
+        content: "Just attended a workshop on agile leadership. Empowering teams for success. #agileleadership #leadershipdevelopment",
         user: '2',
         date: sub(new Date(), { minutes: 10 }).toISOString(),
         reactions: {
@@ -544,7 +544,7 @@ const initialTweetList = [
     },
     {
         id: '30',
-        content: 'Hello world! This is Kevin!',
+        content: "Reflecting on the power of resilience in tech. Every setback is an opportunity for growth. #resilience #growthmindset",
         user: '1',
         date: sub(new Date(), { minutes: 5 }).toISOString(),
         reactions: {

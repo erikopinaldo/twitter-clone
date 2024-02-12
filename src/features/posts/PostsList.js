@@ -78,7 +78,7 @@ export const PostsList = ( { handleTweetModalClose, handleTweetButtonOpen }) => 
                             <PostAuthorUsername userId={renderedPost.user} />
                             <TweetDate timestamp={renderedPost.date} />
                         </div>
-                        <p className="post-content">{renderedPost.content.substring(0, 100)}</p>
+                        <p className="post-content">{renderedPost.content.substring(0, 10000)}</p>
 
                         <ReactionButtons post={renderedPost} />
                     </div>
