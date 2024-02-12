@@ -854,7 +854,8 @@ button:disabled:hover {
   font-size: 13px;
 }
 
-.whats-happening-container:hover {
+.trending-header-container:hover {
+  border-radius: 16px;
   background-color: rgba(247, 249, 249, 1.00);
   cursor: default;
 }

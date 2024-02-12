@@ -53,7 +53,7 @@ export const RightPane = () => {
                             </aside>
                         </div>
                         <div className='trending-card-container'>
-                            <div className='whats-happening-container trending-card-item'>
+                            <div className='trending-header-container trending-card-item'>
                                 <h2>What's happening</h2>
                             </div>
                             <div className='trending-card-item'>
@@ -158,7 +158,7 @@ export const RightPane = () => {
                             </div>
                         </div>
                         <div className='trending-card-container'>
-                            <div className='whats-happening-container trending-card-item'>
+                            <div className='trending-header-container trending-card-item'>
                                 <h2>Who to follow</h2>
                             </div>
                             {userList}
