@@ -755,6 +755,24 @@ button:disabled:hover {
   box-shadow: none;
 }
 
+.trending-container {
+  display: flex;
+  height: 200vh;
+}
+
+.trending-container-child {
+  position: sticky;
+  bottom: 50px;
+  align-self: flex-end;
+}
+
+@media (min-height: 1010px) {
+  .trending-container-child {
+    top: 12px;
+    align-self: flex-start;
+  }
+}
+
 .trending-container-spacer {
   height: 53px;
 }
@@ -874,6 +892,7 @@ h2 {
   .right-pane-container {
     display: block;
     margin-left: 30px;
+    margin-right: 50px;
     padding-top: 12px;
   }
 
