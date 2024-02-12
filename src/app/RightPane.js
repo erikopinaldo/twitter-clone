@@ -135,7 +135,7 @@ export const RightPane = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='trending-card-item'>
+                            <div className='trending-card-item trending-card-item-last'>
                                 <div className='trending-card-item-subheading-container'>
                                     <div className='trending-card-item-subheading-item'>
                                         <span>Technology</span>
