@@ -638,6 +638,11 @@ span:has( + .selected-view ) {
   line-height: 20px;
 }
 
+.tweet-details, .tweet-details .subheading-spacer {
+  display: inline;
+  color: rgb(83, 100, 113);
+}
+
 p.post-content {
   margin-bottom: 0;
   font-size: 15px;
