@@ -9,7 +9,7 @@ export const TweetDate = ({ timestamp }) => {
 
     return (
         <span title={timestamp}>
-            &nbsp; <i>{date}</i>
+            {date}
         </span>
     )
 }

@@ -75,8 +75,13 @@ export const PostsList = ( { handleTweetModalClose, handleTweetButtonOpen }) => 
                                 parentAuthorId={post.retweets_id ? renderedPost.user : null}
                                 currentUser={currentUser} />
                             <PostAuthor userId={renderedPost.user} />
-                            <PostAuthorUsername userId={renderedPost.user} />
-                            <TweetDate timestamp={renderedPost.date} />
+                            <div className='tweet-details'>
+                                <PostAuthorUsername userId={renderedPost.user} />
+                                <div className='subheading-spacer'>
+                                    <span>·</span>
+                                </div>      
+                                <TweetDate timestamp={renderedPost.date} />
+                            </div>  
                         </div>
                         <p className="post-content">{renderedPost.content.substring(0, 10000)}</p>
 
