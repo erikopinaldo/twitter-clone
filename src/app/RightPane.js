@@ -37,7 +37,7 @@ export const RightPane = () => {
             <div className='trending-container'>
                 <div className='trending-container-child'>
                     <div className='trending-container-spacer'></div>
-                    <div className='subscribe-card-container trending-container-item'>
+                    <div className='subscribe-card-container'>
                         <aside className='subscribe-card'>
                             <div className='subscribe-text-container'>
                                 <span className='subscribe-text'>Subscribe to Premium</span>

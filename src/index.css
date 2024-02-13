@@ -812,7 +812,7 @@ button:disabled:hover {
   line-height: 20px;
 }
 
-.trending-container-item {
+.subscribe-card-container {
   background-color: rgba(247, 249, 249, 1.00);
   border-radius: 16px;
   margin-bottom: 16px;
@@ -939,10 +939,6 @@ h2 {
     display: flex;
     position: fixed;
     height: 60px;
-  }
-
-  .subscribe-card-container {
-    display: block;
   }
 }
 
