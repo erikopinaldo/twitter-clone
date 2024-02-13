@@ -12,24 +12,28 @@ Frontend for a Twitter clone using Redux for state management. Project was used 
 * Like tweet
 * Retweet 
   * Retweets show up for other users 
-* Temporary: switch users without auth
+* Switch users without auth (used for testing)
 
 **Tech used:** React, Redux, [Primitive UI](https://taniarascia.github.io/primitive/)
 
 ### Components
-Currently, the bulk of the project's functionalities exist on the home route. Present on this home page are: 
-
 * Nav bar (currently non-functional)
 * User selection drop-down menu
-  * This allows you to view the timeline based on the user you select. For example, if you select Tianna and retweet something, you will see the **Retweet** button change to an "active" state. However, the retweeted tweet item will not show up in your feed unless you switch users. 
+  * This allows you to view the timeline based on the user you select. For example, if you select Tianna and retweet something, you will see the **Retweet** button change to an "active" state. However, the retweeted  item will not show up in your feed unless you switch users. 
 * New tweet form
   * Allows you to send out a new tweet attributed to the user selected in the user selection drop-down menu
+* New tweet modal
+  * Appears when you click the `Post` button present in the nav bar (desktop) or the `+` button at the bottom right of the screen (mobile)
+  * Modal fills entire screen on mobile
 * Tweet feed
   * Shows all tweets from all users, including retweets 
 * Tweet action buttons 
   * Reply (currently non-functional)
   * Retweet: creates a retweet entity and tracks number of retweets
   * Like: tracks number of likes 
+* Search bar (currently non-functional)
+* Right pane
+  * Contains supplementary cards present in Twitter proper: the `Subscribe to Premium`, `What's happening`, and `Who to follow` cards
 
 ### State management 
 There are currently 3 main categories of data tracked by Redux's state management logic: users, tweets, and currently selected user (from the user drop-down menu)
