@@ -3,9 +3,9 @@ import { UserDropdown } from '../features/currentUser/UserDropdown'
 
 export const Navbar = ({ handleTweetButtonOpen }) => {
   return (
-    <nav className='navbar'>
-      <section className='top-nav'>
-        <div className="navContent">
+    <nav className='nav-container'>
+      <section className='nav-menu-container'>
+        <div className="nav-menu">
           <div className="navLinks">
             <div className='logo-wrapper'>
               <a href='#'>
