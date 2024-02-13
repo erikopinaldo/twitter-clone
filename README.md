@@ -101,7 +101,6 @@ While initially reading through [Redux's official docs](https://redux.js.org/tut
 
 Once I reached the practical examples shown in the docs, I _really_ started learning and getting things. 
 
-Ohh ok this is starting to make sense! 
 1. Initialize your store in a separate store file.
     * The store is what actually houses your app's shared state 
     * You also list out what reducers should have the ability to update the state in this store
