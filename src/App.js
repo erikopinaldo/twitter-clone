@@ -26,7 +26,7 @@ function App() {
   return (
     <Router>
       <div className='wrapper'>
-        <div className='main-container'>
+        <div className='main'>
           <Navbar handleTweetButtonOpen={open} />
           <div className="App">
             <Switch>
