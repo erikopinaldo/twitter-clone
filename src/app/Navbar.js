@@ -6,7 +6,7 @@ export const Navbar = ({ handleTweetButtonOpen }) => {
     <nav className='nav-container'>
       <section className='nav-menu-container'>
         <div className="nav-menu">
-          <div className="navLinks">
+          <div className="nav-menu-links-container">
             <div className='logo-wrapper'>
               <a href='#'>
                 <div className='logo-container'>
