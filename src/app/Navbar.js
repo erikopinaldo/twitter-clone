@@ -75,7 +75,7 @@ export const Navbar = ({ handleTweetButtonOpen }) => {
                 </div>
               </a>
             </div>
-            <div className='navLink nav-tweet-button-container'>
+            <div className='nav-menu-link-item nav-tweet-button-container'>
               <button type='button' className='nav-tweet-button' onClick={() => handleTweetButtonOpen()}>
                 <span className='nav-tweet-button-post'>Post</span>
                 <svg viewBox="0 0 24 24" className='nav-tweet-button-icon'>
