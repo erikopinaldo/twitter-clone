@@ -752,7 +752,7 @@ button:disabled:hover {
   line-height: 20px;
 }
 
-.search-card-container {
+.search-bar-container {
   top: 0;
   /* padding-top: 5px; */
   align-items: center;
@@ -935,7 +935,7 @@ h2 {
     padding-top: 12px;
   }
 
-  .search-card-container {
+  .search-bar-container {
     display: flex;
     position: fixed;
     height: 60px;
@@ -951,7 +951,7 @@ h2 {
     width: 290px;
   }
 
-  .search-card-container {
+  .search-bar-container {
     width: 290px;
   }
 
@@ -965,7 +965,7 @@ h2 {
     width: 350px;
   }
 
-  .search-card-container {
+  .search-bar-container {
     width: 350px;
   }
 

@@ -22,7 +22,7 @@ export const RightPane = () => {
 
     return (
         <div className='right-pane-container'>
-            <div className='search-card-container'>
+            <div className='search-bar-container'>
                 <div className='search-bar'>
                     <div className='search-icon-container'>
                         <svg viewBox="0 0 24 24" className='search-icon'>
