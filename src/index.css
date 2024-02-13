@@ -749,6 +749,7 @@ button:disabled:hover {
 
 .right-pane-container {
   display: none;
+  line-height: 20px;
 }
 
 .search-card-container {
