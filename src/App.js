@@ -28,7 +28,7 @@ function App() {
       <div className='wrapper'>
         <div className='main'>
           <Navbar handleTweetButtonOpen={open} />
-          <div className="App">
+          <main className="App">
             <Switch>
               <Route
                 exact
@@ -65,10 +65,9 @@ function App() {
               <Route exact path="/compose/tweet" component={MobileAddPostForm} />
               <Redirect to="/" />
             </Switch>
-          </div>
+          </main>
           <RightPane />
-        </div>
-        
+        </div>        
       </div>
     </Router>
   )
