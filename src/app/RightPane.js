@@ -161,7 +161,6 @@ export const RightPane = () => {
                         </div>
                         {userList}
                     </div>
-                    <div className='who-to-follow-card-container'></div>
                 </div>
             </div>
         </div>
