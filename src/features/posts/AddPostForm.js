@@ -40,8 +40,8 @@ export const AddPostForm = ({ handleCloseClick }) => {
             <div className='add-post-form-content-container'>
                 <form onSubmit={onSavePostClicked}>
                     <textarea
-                        id="postContent"
-                        name="postContent"
+                        id="add-post-form-content"
+                        name="add-post-form-content"
                         placeholder='What is happening?!'
                         value={content}
                         onChange={onContentChanged}

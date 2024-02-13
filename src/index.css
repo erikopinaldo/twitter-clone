@@ -39,14 +39,14 @@ p {
   justify-content: center;
 }
 
-.main-container {
+.main {
   display: flex;
   width: 100%;
 }
 
 /* Navbar */
 
-.navbar {
+.nav-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -141,7 +141,7 @@ p {
 
 /* Logo */
 
-.logo-wrapper {
+.logo-anchor-container {
   display: none;
 }
 
@@ -171,12 +171,12 @@ nav section {
   color: white;
 }
 
-.navLinks {
+.nav-menu-links-container {
   display: flex;
   justify-content: space-around;
 }
 
-.navLink {
+.nav-menu-link-item {
   color: #f2f2f2;
   text-align: left;
   font-size: 17px;
@@ -184,16 +184,16 @@ nav section {
   border-radius: 9999px;
 }
 
-.navLink-content {
+.nav-menu-link-item-content {
   display: flex;
   align-items: center;
 }
 
-.navLink a {
+.nav-menu-link-item a {
   text-decoration: none;
 }
 
-.navLink:hover {
+.nav-menu-link-item:hover {
   background-color: var(--hover-color);
 }
 
@@ -206,7 +206,7 @@ nav section {
   width: 1.75rem;
 }
 
-.navLink-text {
+.nav-menu-link-item-text {
   display: none;
   color: black;
 }
@@ -219,7 +219,7 @@ nav section {
   background-color: rgb(26, 140, 216);
 }
 
-.nav-tweet-button-post {
+.nav-tweet-button-text {
   display: none;
 }
 
@@ -228,7 +228,7 @@ nav section {
 }
 
 @media (min-width: 800px) {
-  .main-container {
+  .main {
     width: unset;
   }
 
@@ -240,11 +240,11 @@ nav section {
     padding: 0px 20px 0px 20px;
   }
 
-  .navLinks, .navLink {
+  .nav-menu-links-container, .nav-menu-link-item {
     display: block;
   }
 
-  .logo-wrapper {
+  .logo-anchor-container {
     display: block;
     border-radius: 9999px;
   }
@@ -274,28 +274,28 @@ nav section {
       max-width: 600px;
     }
   
-  .navbar {
+  .nav-container {
     width: var(--nav-width-medium);
     height: 100%;
   }
 
-  .navContent {
+  .nav-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .navLinks {
+  .nav-menu-links-container {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .navLink {
+  .nav-menu-link-item {
     padding: 14px;
   }
 
-  .navLink-content {
+  .nav-menu-link-item-content {
     justify-content: center;
   }
 
@@ -332,7 +332,7 @@ nav section {
     max-width: 600px;
   }
   
-  .navbar {
+  .nav-container {
     width: var(--nav-width);
     height: 100%;
   }
@@ -341,7 +341,7 @@ nav section {
     padding: 16px;
   }
 
-  .navLink-text {
+  .nav-menu-link-item-text {
     display: inline-block;
     margin-left: 20px;
     font-size: 20px;
@@ -353,7 +353,7 @@ nav section {
     margin: 16px 0;
   }
 
-  .nav-tweet-button-post {
+  .nav-tweet-button-text {
     display: inline;
   }
 
@@ -370,7 +370,7 @@ nav section {
   }
 }
 
-.navLinks a .badge {
+.nav-menu-links-container a .badge {
   margin-left: 5px;
   position: relative;
   top: -3px;
@@ -497,7 +497,7 @@ span:has( + .selected-view ) {
   padding: 0.5rem 0;
 }
 
-.modal-top-nav {
+.add-post-form-modal {
   height: 53px;
 }
 
@@ -535,7 +535,7 @@ span:has( + .selected-view ) {
   width: 100%;
 }
 
-#postContent {
+#add-post-form-content {
   border: none;
   border-bottom: var(--border-color);
   outline: none;
@@ -749,9 +749,10 @@ button:disabled:hover {
 
 .right-pane-container {
   display: none;
+  line-height: 20px;
 }
 
-.search-card-container {
+.search-bar-container {
   top: 0;
   /* padding-top: 5px; */
   align-items: center;
@@ -811,7 +812,7 @@ button:disabled:hover {
   line-height: 20px;
 }
 
-.trending-container-item {
+.subscribe-card-container {
   background-color: rgba(247, 249, 249, 1.00);
   border-radius: 16px;
   margin-bottom: 16px;
@@ -934,14 +935,10 @@ h2 {
     padding-top: 12px;
   }
 
-  .search-card-container {
+  .search-bar-container {
     display: flex;
     position: fixed;
     height: 60px;
-  }
-
-  .subscribe-card-container {
-    display: block;
   }
 }
 
@@ -950,7 +947,7 @@ h2 {
     width: 290px;
   }
 
-  .search-card-container {
+  .search-bar-container {
     width: 290px;
   }
 
@@ -964,7 +961,7 @@ h2 {
     width: 350px;
   }
 
-  .search-card-container {
+  .search-bar-container {
     width: 350px;
   }
 

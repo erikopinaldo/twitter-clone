@@ -9,10 +9,9 @@ export const RightPane = () => {
 
     const userList = users.map((user) => {
         return (
-            <div className='who-to-follow-container'>
+            <div key={user.id} className='who-to-follow-container'>
                 <UserSelectBubble
                     user={user}
-                    key={user.id}
                     containerStyleOptions='who-to-follow-item' />
                 <div className='who-to-follow-button-container'>
                     <button type='button' className='subscribe-button'>Follow</button>
@@ -24,7 +23,7 @@ export const RightPane = () => {
     return (
         <div className='right-pane-container'>
             <div className='sticky-right-pane-wrapper'>
-                <div className='search-card-container'>
+                <div className='search-bar-container'>
                     <div className='search-bar'>
                         <div className='search-icon-container'>
                             <svg viewBox="0 0 24 24" className='search-icon'>
@@ -39,7 +38,7 @@ export const RightPane = () => {
                 <div className='trending-container'>
                     <div className='trending-container-child'>
                         <div className='trending-container-spacer'></div>
-                        <div className='subscribe-card-container trending-container-item'>
+                        <div className='subscribe-card-container'>
                             <aside className='subscribe-card'>
                                 <div className='subscribe-text-container'>
                                     <span className='subscribe-text'>Subscribe to Premium</span>
@@ -163,10 +162,9 @@ export const RightPane = () => {
                             </div>
                             {userList}
                         </div>
-                        <div className='who-to-follow-card-container'></div>
-                    </div>     
+                    </div>
                 </div>
-            </div>
+            </div>      
         </div>
     )
 }
