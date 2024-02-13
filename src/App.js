@@ -47,7 +47,7 @@ function App() {
                       id='compose-modal'
                       isOpen={showDialog}
                       onDismiss={close}>
-                      <div className='modal-top-nav'>
+                      <div className='add-post-form-modal'>
                         <div className='close-modal-icon-container' onClick={close}>
                           <svg className='close-modal-icon' viewBox="0 0 24 24">
                             <g>

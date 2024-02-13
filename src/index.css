@@ -497,7 +497,7 @@ span:has( + .selected-view ) {
   padding: 0.5rem 0;
 }
 
-.modal-top-nav {
+.add-post-form-modal {
   height: 53px;
 }
 
