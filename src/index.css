@@ -535,7 +535,7 @@ span:has( + .selected-view ) {
   width: 100%;
 }
 
-#postContent {
+#add-post-form-content {
   border: none;
   border-bottom: var(--border-color);
   outline: none;
