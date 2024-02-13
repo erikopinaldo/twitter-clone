@@ -9,10 +9,9 @@ export const RightPane = () => {
 
     const userList = users.map((user) => {
         return (
-            <div className='who-to-follow-container'>
+            <div key={user.id} className='who-to-follow-container'>
                 <UserSelectBubble
                     user={user}
-                    key={user.id}
                     containerStyleOptions='who-to-follow-item' />
                 <div className='who-to-follow-button-container'>
                     <button type='button' className='subscribe-button'>Follow</button>
