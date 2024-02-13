@@ -7,7 +7,7 @@ export const Navbar = ({ handleTweetButtonOpen }) => {
       <section className='nav-menu-container'>
         <div className="nav-menu">
           <div className="nav-menu-links-container">
-            <div className='logo-wrapper'>
+            <div className='logo-anchor-container'>
               <a href='#'>
                 <div className='logo-container'>
                   <svg id='logo' viewBox="0 0 24 24">
