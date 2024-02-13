@@ -141,7 +141,7 @@ p {
 
 /* Logo */
 
-.logo-wrapper {
+.logo-anchor-container {
   display: none;
 }
 
@@ -176,7 +176,7 @@ nav section {
   justify-content: space-around;
 }
 
-.navLink {
+.nav-menu-link-item {
   color: #f2f2f2;
   text-align: left;
   font-size: 17px;
@@ -184,16 +184,16 @@ nav section {
   border-radius: 9999px;
 }
 
-.navLink-content {
+.nav-menu-link-item-content {
   display: flex;
   align-items: center;
 }
 
-.navLink a {
+.nav-menu-link-item a {
   text-decoration: none;
 }
 
-.navLink:hover {
+.nav-menu-link-item:hover {
   background-color: var(--hover-color);
 }
 
@@ -206,7 +206,7 @@ nav section {
   width: 1.75rem;
 }
 
-.navLink-text {
+.nav-menu-link-item-text {
   display: none;
   color: black;
 }
@@ -240,11 +240,11 @@ nav section {
     padding: 0px 20px 0px 20px;
   }
 
-  .nav-menu-links-container, .navLink {
+  .nav-menu-links-container, .nav-menu-link-item {
     display: block;
   }
 
-  .logo-wrapper {
+  .logo-anchor-container {
     display: block;
     border-radius: 9999px;
   }
@@ -291,11 +291,11 @@ nav section {
     align-items: center;
   }
 
-  .navLink {
+  .nav-menu-link-item {
     padding: 14px;
   }
 
-  .navLink-content {
+  .nav-menu-link-item-content {
     justify-content: center;
   }
 
@@ -341,7 +341,7 @@ nav section {
     padding: 16px;
   }
 
-  .navLink-text {
+  .nav-menu-link-item-text {
     display: inline-block;
     margin-left: 20px;
     font-size: 20px;

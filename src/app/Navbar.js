@@ -19,9 +19,9 @@ export const Navbar = ({ handleTweetButtonOpen }) => {
               </a>
             </div>
 
-            <div className='navLink'>
+            <div className='nav-menu-link-item'>
               <a href='#'>
-                <div className='navLink-content'>
+                <div className='nav-menu-link-item-content'>
                   <div className='nav-icon-container'>
                     <svg className='nav-icon' viewBox="0 0 24 24">
                       <g>
@@ -29,13 +29,13 @@ export const Navbar = ({ handleTweetButtonOpen }) => {
                       </g>
                     </svg>
                   </div>
-                  <span className='navLink-text'>Home</span>
+                  <span className='nav-menu-link-item-text'>Home</span>
                 </div>
               </a>
             </div>
-            <div className='navLink'>
+            <div className='nav-menu-link-item'>
               <a href='#'>
-                <div className='navLink-content'>
+                <div className='nav-menu-link-item-content'>
                   <div className='nav-icon-container'>
                     <svg className='nav-icon' viewBox="0 0 24 24">
                       <g>
@@ -43,13 +43,13 @@ export const Navbar = ({ handleTweetButtonOpen }) => {
                       </g>
                     </svg>
                   </div>
-                  <span className='navLink-text'>Explore</span>
+                  <span className='nav-menu-link-item-text'>Explore</span>
                 </div>
               </a>
             </div>
-            <div className='navLink'>
+            <div className='nav-menu-link-item'>
               <a href='#'>
-                <div className='navLink-content'>
+                <div className='nav-menu-link-item-content'>
                   <div className='nav-icon-container'>
                     <svg className='nav-icon' viewBox="0 0 24 24">
                       <g>
@@ -57,13 +57,13 @@ export const Navbar = ({ handleTweetButtonOpen }) => {
                       </g>
                     </svg>
                   </div>
-                  <span className='navLink-text'>Notifications</span>
+                  <span className='nav-menu-link-item-text'>Notifications</span>
                 </div>
               </a>
             </div>
-            <div className='navLink'>
+            <div className='nav-menu-link-item'>
               <a href='#'>
-                <div className='navLink-content'>
+                <div className='nav-menu-link-item-content'>
                   <div className='nav-icon-container'>
                     <svg className='nav-icon' viewBox="0 0 24 24">
                       <g>
@@ -71,7 +71,7 @@ export const Navbar = ({ handleTweetButtonOpen }) => {
                       </g>
                     </svg>
                   </div>
-                  <span className='navLink-text'>Messages</span>
+                  <span className='nav-menu-link-item-text'>Messages</span>
                 </div>
               </a>
             </div>
