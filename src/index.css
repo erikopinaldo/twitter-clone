@@ -219,7 +219,7 @@ nav section {
   background-color: rgb(26, 140, 216);
 }
 
-.nav-tweet-button-post {
+.nav-tweet-button-text {
   display: none;
 }
 
@@ -353,7 +353,7 @@ nav section {
     margin: 16px 0;
   }
 
-  .nav-tweet-button-post {
+  .nav-tweet-button-text {
     display: inline;
   }
 
