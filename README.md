@@ -101,16 +101,16 @@ While initially reading through [Redux's official docs](https://redux.js.org/tut
 
 Once I reached the practical examples shown in the docs, I _really_ started learning and getting things. 
 
-> Ohh ok this is starting to make sense! 
-> 1. Initialize your store in a separate store file.
->     * The store is what actually houses your app's shared state 
->     * You also list out what reducers should have the ability to update the state in this store
->     * These reducers are separated by "slice"
-> 2. Where are these reducers coming from? This is coming from a file called a `slice`. These slices represent different features present in your app and contain all of the Redux action and reducer logic for that particular feature, so you will end up having multiple slices in your codebase. For example, in my Twitter clone, I've got a `users` slice that's separate from my `posts` slice. 
->    * In each of these slices, you define the logic that is used to update the store. For example, if a particular reducer defined in the `posts` slice "hears" that a certain action, `postAdded`, is dispatched from the UI, then it will go and update the state for our `posts` and add a new post.
-> 3. Ok so you need a reducer to be triggered by a dispatched action in order for the reducer to update a particular slice of the store. How do you dispatch an action from the UI? 
->    * The answer: within your components! If you're looking into Redux, you already know that you can define event handlers from within your components.  These event handlers can be written to "dispatch" actions that trigger your previously defined reducers. These actions are made available to you via the `useDispatch` function from Redux Toolkit. For example, if a user clicks a certain part of your UI, you can call `useDispatch(ACTION_NAME)` to trigger a specific reducer. 
-> 4. Finally, each of your components can access your Redux state/store via the `useSelector` function, also provided to you via Redux Toolkit. You can specify which slice in particular you want to access. This looks like `useSelector(GLOBAL_STATE => GLOBAL_STATE.SLICE_NAME)`
+Ohh ok this is starting to make sense! 
+1. Initialize your store in a separate store file.
+    * The store is what actually houses your app's shared state 
+    * You also list out what reducers should have the ability to update the state in this store
+    * These reducers are separated by "slice"
+2. Where are these reducers coming from? This is coming from a file called a `slice`. These slices represent different features present in your app and contain all of the Redux action and reducer logic for that particular feature, so you will end up having multiple slices in your codebase. For example, in my Twitter clone, I've got a `users` slice that's separate from my `posts` slice. 
+   * In each of these slices, you define the logic that is used to update the store. For example, if a particular reducer defined in the `posts` slice "hears" that a certain action, `postAdded`, is dispatched from the UI, then it will go and update the state for our `posts` and add a new post.
+3. Ok so you need a reducer to be triggered by a dispatched action in order for the reducer to update a particular slice of the store. How do you dispatch an action from the UI? 
+   * The answer: within your components! If you're looking into Redux, you already know that you can define event handlers from within your components.  These event handlers can be written to "dispatch" actions that trigger your previously defined reducers. These actions are made available to you via the `useDispatch` function from Redux Toolkit. For example, if a user clicks a certain part of your UI, you can call `useDispatch(ACTION_NAME)` to trigger a specific reducer. 
+4. Finally, each of your components can access your Redux state/store via the `useSelector` function, also provided to you via Redux Toolkit. You can specify which slice in particular you want to access. This looks like `useSelector(GLOBAL_STATE => GLOBAL_STATE.SLICE_NAME)`
 
 ### Note
 It's worth noting that you shouldn't be using Redux for all of your app's logic, or even at all depending on your app structure. If any of the following is true, then you should consider skipping out on Redux or larger state management solutions as a whole: 
