@@ -32,11 +32,19 @@ p {
 .wrapper {
   margin: 0 auto;
   max-width: 1038px;
-  /*Scrollbar layout shift fix*/
-  position: relative;
   /* left: calc((100vw - 100%) / 2); */
   display: flex;
   justify-content: center;
+}
+
+/* On larger screens, re‑enable the relative positioning used for the desktop layout
+   so the scrollbar layout shift fix still applies there, but avoid it on mobile,
+   where it can interfere with the fixed bottom nav on iOS browsers. */
+@media (min-width: 1024px) {
+  .wrapper {
+    /* Scrollbar layout shift fix (desktop only) */
+    position: relative;
+  }
 }
 
 .main {
@@ -58,19 +66,6 @@ p {
   background-color: white;
   border-top: var(--border-color);
   z-index: 1;
-}
-
-/* On touch/iOS-sized viewports, switch to sticky bottom nav */
-@supports (-webkit-touch-callout: none) {
-  @media (max-width: 1023px) {
-    .nav-container {
-      position: sticky;
-      bottom: 0;
-      top: auto;
-      left: 0;
-      right: 0;
-    }
-  }
 }
 
 /* User dropdown */
