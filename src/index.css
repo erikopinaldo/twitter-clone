@@ -60,6 +60,19 @@ p {
   z-index: 1;
 }
 
+/* On touch/iOS-sized viewports, switch to sticky bottom nav */
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 1023px) {
+    .nav-container {
+      position: sticky;
+      bottom: 0;
+      top: auto;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
 /* User dropdown */
 
 .user-dropdown-container {
